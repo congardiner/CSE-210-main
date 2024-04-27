@@ -4,6 +4,77 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep2 World!");
+        Console.Write("What is your grade percentage? ");
+        string usercg = Console.ReadLine();
+        Console.WriteLine("");
+        
+        if (double.TryParse(usercg, out double gradepercentcg))
+            if (gradepercentcg >= 90)
+            {
+                Console.WriteLine($"Your percentage of {gradepercentcg} Grade Percentage was more than 90%, so you got an A!");
+            }
+
+            else if (gradepercentcg >= 80)
+            {
+                Console.WriteLine($"Your percentage of {gradepercentcg} Grade Percentage was more than 80%, so you got an B!");
+            }
+
+            else if (gradepercentcg >= 70)
+            {
+                Console.WriteLine($"Your percentage of {gradepercentcg} Grade Percentage was more than 70%, so you got an C!");
+            }
+
+            else if (gradepercentcg >= 60)
+            {
+                Console.WriteLine($"Well you did it, just barely getting a percentage of {gradepercentcg}, with a D! This isn't enough to pass the course, but you will still receieve credit.");
+            }
+
+            else
+            {
+                Console.WriteLine($"Unfortunately with your grade percentage of {gradepercentcg}, this is not a passing grade. Retake or remedial is now necessary!");
+            }
+
+        else
+        {
+            Console.WriteLine("Try again with your input, as this appears to not be a valid number, or in the correct notation for my basic program.");
+        }
+        // if (gradepercentcg >= "70")
     }
 }
+
+
+//practice from my notes to review and learn
+
+// for if statements:
+
+// if (x < y)
+// { Console.WriteLine("Less than");}
+
+// use if, else if, and else, not elif in c sharp!
+
+// review != is the notation for not equal, all others are still used the same like in python.
+
+// We do the || for the OR operator? Interesting.
+
+// && this is for the AND operator? What??
+
+
+   //    Console.WriteLine("");
+//   //    Console.Write("Write me a numerical value: ");
+   //    string inputvaluecg = Console.ReadLine();
+////   //    int x = int.Parse(inputvaluecg);
+   //    int y = 2;
+//   //    if (x > y)
+   //    {
+   //        Console.WriteLine("Greater");
+   //    }
+   //    else if (x < y)
+   //    {
+   //        Console.WriteLine("Less");
+   //    }
+   //    else
+   //    {
+   //        Console.WriteLine("Not Greater");
+   //    }
+
+
