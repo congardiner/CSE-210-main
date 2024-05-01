@@ -8,7 +8,7 @@ class Program
         string usercg = Console.ReadLine();
         Console.WriteLine("");
         
-        string lettercg; // Declare the variable lettercg here
+        string lettercg;
 
         if (double.TryParse(usercg, out double gradepercentcg))
         {
