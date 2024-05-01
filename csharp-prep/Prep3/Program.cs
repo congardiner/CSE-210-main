@@ -6,11 +6,50 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("What is the magic number?");
-        Console.Write("");
-        // should store their value with i
+        string magicnumber = Console.ReadLine();
+        // 
 
         Console.WriteLine("What is your guess?");
-        Console.Write("");
+        string guess = Console.ReadLine();
+
+        if 
+            if (guess > magicnumber)
+            {
+                Console.WriteLine("");
+            }
+
+            else if (guess < magicnumber)
+            {
+                Console.WriteLine("");
+            }
+
+            else (guess  magicnumber)
+            {
+                Console.WriteLine("You guessed it right!");
+            }
+
+        else
+        {
+            Console.WriteLine("Congradulations")
+        }
+
+
+
+
+
+
+        Console.WriteLine("Would you like to play the game again?");
+        string playagain = Console.ReadLine();
+
+        string yesno;
+
+        if (double.TryParse(magicnumber, out double answer);
+
+
+
+        
+
+
 
         
         // 

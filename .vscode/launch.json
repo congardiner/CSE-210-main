@@ -17,6 +17,19 @@
         },
 
         {
+            "name": "Practice Program",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Sandbox",
+            "program": "${workspaceFolder}/sandbox/Sandbox/bin/Debug/net8.0/Sandbox.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Sandbox",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
             "name": "C# Prep 1",
             "type": "coreclr",
             "request": "launch",
