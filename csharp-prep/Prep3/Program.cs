@@ -5,69 +5,67 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("What is the magic number?");
-        string magicnumber = Console.ReadLine();
+        Random random = new Random();
+        int magicnumber = random.Next(1, 11);
+
+        bool playagain = true;
+
+        Console.WriteLine("Welcome to my random number guessing game!");
+
+        Console.WriteLine("You will be able to guess a number chosen at random between 1-10, in this version you have unlimited attempts!");
+
+    while (playagain)
+    {
+        // Console.WriteLine("What is the magic number? ");
+        // int magicnumber = int.Parse(Console.ReadLine());
         // 
 
-        Console.WriteLine("What is your guess?");
-        string guess = Console.ReadLine();
+        Console.WriteLine("What is your guess? ");
+        int guess = int.Parse(Console.ReadLine());
 
-        if 
-            if (guess > magicnumber)
-            {
-                Console.WriteLine("");
-            }
+// could make it so that they have a limited number of guesses
+// use a while loop so that while they are within this script, they are stuck until the conditions are met.
 
-            else if (guess < magicnumber)
-            {
-                Console.WriteLine("");
-            }
+    
+        if (guess > magicnumber)
+        {
+            Console.WriteLine("Lower!");
+        }
 
-            else (guess  magicnumber)
-            {
-                Console.WriteLine("You guessed it right!");
-            }
+        else if (guess < magicnumber)
+        {
+            Console.WriteLine("Higher!");
+        }
 
         else
         {
-            Console.WriteLine("Congradulations")
+            Console.WriteLine("You guessed it right!");
+            playagain = false;
+        }
+    }
+        // to put something in a list, you use .add() to add something to a list.
+
+    if (playagain)
+    {
+        Console.WriteLine("Would you like to play the game again? (yes or no)");
+        string playthrough = Console.ReadLine().ToLower();
+   
+        if (playthrough != "yes")
+        {
+            playagain = false; 
+            Console.WriteLine("Thank you for playing the game! Lets get started!");
         }
 
-
-
-
-
-
-        Console.WriteLine("Would you like to play the game again?");
-        string playagain = Console.ReadLine();
-
-        string yesno;
-
-        if (double.TryParse(magicnumber, out double answer);
-
-
-
-        
-
-
-
-        
-        // 
-
-        // this will be my for loops for the number, to then ask how they did based off of their guess:
-        //for  
-        //{
-        //    Console.WriteLine(i);
-        //}
-        //Random randomGenerator = new Random();
-        //int number = randomGenerator.Next(1, 11);
-
-
-
-
+        else
+        {
+            Console.WriteLine("That is not a proper response, 'yes' or 'no' are the two options.");
+        }
 
     }
+    
+    }
 }
+
 
 // while
 
