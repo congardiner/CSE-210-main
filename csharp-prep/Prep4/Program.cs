@@ -7,7 +7,6 @@ class Program
     {
 
         List<string> numbers = new List<string>();
-
         
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
@@ -26,13 +25,30 @@ class Program
             Console.WriteLine(number);
         }
 
-        int sum = NumberSum(numbers);
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum+= number;
+        }
+        
+        
 
-        Console.WriteLine("The Sum is: " + sum);
+        Console.WriteLine($"The Sum is: {sum}");
 
-        Console.WriteLine("The average is: ");
+        float average = ((float)sum) / numbers.Count;
 
-        Console.WriteLine("The largest number is: ");
+        Console.WriteLine($"The average is: {average}");
+
+        int max = numbers[0];
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                max = number
+            }
+        }
+
+        Console.WriteLine($"The largest number is: {max} ");
 
 
 
