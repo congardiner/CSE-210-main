@@ -1,30 +1,52 @@
 using System;
+using System.Configuration.Assemblies;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep5 World!");
-        string DisplayWelcome(string welcome)
-        {
-            Console.WriteLine($"Hello, welcome to the Program!");
-        }
 
-        string PromptUserName(string userName)
-        {
-            Console.WriteLine("What is your name?");
-            string name = Console.ReadLine();
+        DisplayWelcomeMessage();
 
-            Console.WriteLine("Hello, "+ name +"!Welcome to the Program!");
-            Console.WriteLine($"Also glad to hear that your favorite number is {favNumber}.");
-        }
+        string userName = PromptUserName();
+        int userNumber = PromptUserNumber();
 
-        string PromptUserNumber(int favNumber)
-        {
-            Console.WriteLine("What is your favorite number? ");
-            string numfav = Console.ReadLine();
+        int SquaredNumber = SquareNumber(userNumber);
 
-            Console.WriteLine("Oh so your favorite number is"+ numfav +"how exciting.");
-        }
+        DisplayResult(userName, SquaredNumber);
+
+    }
+
+    static void DisplayWelcomeMessage()
+    {
+        Console.WriteLine("Hello, welcome to the Program!");
+    }
+
+    static string PromptUserName()
+    {
+        Console.WriteLine("What is your name?");
+        string name = Console.ReadLine();
+
+        return name;
+    }
+
+    static int PromptUserNumber()
+    {
+        Console.WriteLine("What is your favorite number? ");
+        int numfav = int.Parse(Console.ReadLine());
+
+        return numfav;
+    }
+
+    static int SquareNumber(int numfav)
+    {
+        int square = numfav * numfav;
+        return square;
+    }
+
+    static void DisplayResult(string name, int square)
+    {
+         Console.WriteLine($"{name} Oh so your favorite number that has been squared is {square}, how exciting!");
+         Console.WriteLine("Next time you should try a different number, and see how it works out!");
     }
 }
