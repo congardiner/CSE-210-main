@@ -14,7 +14,7 @@ class Course
     // public refers to accessibility.
     
     public void Display() {
-        Console.WriteLine("");
+        Console.WriteLine($"{_courseCode} {_courseName} {_creditHours} {_color}");
     }
 
 }
