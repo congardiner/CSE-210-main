@@ -17,17 +17,37 @@ class mainMenu {
         Console.WriteLine("Quit Program (type 4)");
     }
 
-
-
+// Might be best to include a Main, Journal Entry, Prompt //
+class journalPrompt
+{
     public void journalPrompt()
     {
-        Console.WriteLine("");
+        list<string> prompt = new List<string>()
+        List._givenPrompt = "What is one of highlights from your day?";
+        List._givenPrompt = "Did you have a funny, weird, or abnormal experience?";
+        List._givenPrompt = "Write the first word that comes to mind, and write a short paragraph about what the means to you based off of your day?";
+        List._givenPrompt = "Outline three things that you are grateful for, and why:";
+        List._givenPrompt = "Write about your favorite vacation, and one place that you'd like to visit:";
+        List._givenPrompt = "What did you do to 'love yourself' today?";
+        List._givenPrompt = "What is something that you did today that pushed you outside of your comfort zone, if you can't think of something, what will you do tomorrow? Be specific.";
+        List._givenPrompt = "Who did you serve today?";
+        List._givenPrompt = "What are some goals that you accomplished, or are working on for this week?";
+        List._givenPrompt = "Did you overcome a specific challenge today, and if so, what was it and how did you make it happen?";
+        List._givenPrompt = "What will you do tomorrow to make today memorable, worthwhile, and relivable?";
     }
 
+}
+
+class journalEntry 
+{
+
+}
+    
 
 
 
-    list<string> prompt = new List<string>()
+
+    
 
 
 
