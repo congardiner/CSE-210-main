@@ -16,12 +16,15 @@ class mainMenu {
         Console.WriteLine("Save File (type 3)");
         Console.WriteLine("Quit Program (type 4)");
     }
-
+// need to make these behaviors, rather than just characters as strings!
 // Might be best to include a Main, Journal Entry, Prompt //
 class journalPrompt
 {
     public void journalPrompt()
     {
+         // need to implement the Random promptGenerator here.
+
+        Random promptGenerator = new Random()
         list<string> prompt = new List<string>()
         List._givenPrompt = "What is one of highlights from your day?";
         List._givenPrompt = "Did you have a funny, weird, or abnormal experience?";
@@ -34,8 +37,13 @@ class journalPrompt
         List._givenPrompt = "What are some goals that you accomplished, or are working on for this week?";
         List._givenPrompt = "Did you overcome a specific challenge today, and if so, what was it and how did you make it happen?";
         List._givenPrompt = "What will you do tomorrow to make today memorable, worthwhile, and relivable?";
-    }
 
+        return List
+
+       
+        
+
+    }
 }
 
 class journalEntry 
