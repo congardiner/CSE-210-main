@@ -1,8 +1,5 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 
 // Some creative notes that I could include, is inserting a few parameters into the prompt generator, so that the prompts don't overlap or repeat until they've been experienced.
 // I could also make sure that the user has the option to choose a different prompt if they want to. 
@@ -28,8 +25,11 @@ class journalEntry()
 {
     public string userEntry()
     {
-        Console.WriteLine($"Prompt: {prompts} ");
-        Console.WriteLine($"Entry: {entry}");
+        string randomPrompt = journalPrompt.GetRandomPrompt();
+        Console.WriteLine(randomPrompt);
+
+        Console.WriteLine($"Prompt: {randomPrompt} ");
+        Console.WriteLine($"Entry: ");
         Console.WriteLine();
 
         // how will they knew they've correctly saved to the file.
@@ -41,11 +41,10 @@ class journalEntry()
 class journalPrompt
 {
 
-    public List<string> prompts { get; }
-    public journalPrompt()
+    public List<string> prompts { get; private set; }
+    static journalPrompt()
     {
          // need to implement the Random promptGenerator here.
-
         prompts = new List<string>()
         {
         
@@ -65,10 +64,15 @@ class journalPrompt
         public static string GetRandomPrompt()
         {
             Random random = new Random();
-            int index = random.Next(prompts.Length);
+            int index = random.Next(prompts);
+
             return prompts[index];
         }
     }
+
+    static 
+
+
 }
 
 
