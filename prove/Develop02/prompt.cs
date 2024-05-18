@@ -15,6 +15,8 @@ class journalPrompt
          "Who did you serve today?",
          "What are some goals that you accomplished, or are working on for this week?",
          "Did you overcome a specific challenge today, and if so, what was it and how did you make it happen?",
+         "Who are you trying to become?",
+         "What brings you joy? Truly, what is helping you through life right now?",
          "What will you do tomorrow to make today memorable, worthwhile, and relivable?",
         };
 

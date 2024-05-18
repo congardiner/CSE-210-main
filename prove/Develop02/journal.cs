@@ -1,15 +1,16 @@
 using System;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 class journalEntry()
 {
     public string userEntry()
     {
-        
+
         string randomPrompt = journalPrompt.GetRandomPrompt();
         Console.WriteLine(randomPrompt);
 
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
+        DateTime dateTime = DateTime.Now;
+        string dateText = dateTime.ToShortDateString();
 
         Console.WriteLine($"Prompt: {randomPrompt} ");
         Console.WriteLine($"Entry: ");
@@ -19,8 +20,18 @@ class journalEntry()
         
         public void Display()
         {
-            WriteLine($"Date & Time: {_DateTime}");
-            WriteLine($"User Response: {_journalEntry}")
+            WriteLine($"Date & Time: {_dateTime}");
+            WriteLine($"User Response: {_journalEntry}");
+        }
+
+        public void FileSave(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine($"Date & Time: {_dateTime}");
+                writer.WriteLine($"Journal Entry: {_journalEntry}");
+                writer.WriteLine();
+            }
         }
         // how will they knew they've correctly saved to the file.
     }

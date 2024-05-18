@@ -9,10 +9,10 @@ class mainMenu
 {
     static void Main(string[] args)
     {
-        Display();
+        DisplayMenu();
     }
 
-    static void Display()
+    static void DisplayMenu()
     {
         Console.WriteLine("The Ultimate Journaling System. Does it have a name? Well no, but you do and that's what matters. This is the all in one hub, documenting and storing your memories for the future!");
         Console.WriteLine("This is the Main Menu:");
@@ -20,6 +20,38 @@ class mainMenu
         Console.WriteLine("2. New Prompt (type 2)");
         Console.WriteLine("3. Save File (type 3)");
         Console.WriteLine("4. Quit Program (type 4)");
+    }
+
+    private bool UserInput()
+    {
+        string maininput = Console.ReadLine();
+
+        switch(maininput)
+        {
+            case "1":
+            journalEntry();
+            break;
+
+            case "2":
+            journalPrompt();
+            break;
+
+            case "3":
+            SaveFile();
+            break;
+
+            case "4":
+            Console.WriteLine("Thank you for using the headspace journal, see you next time!");
+            break;
+
+            default:
+            Console.WriteLine("That is not a valid option in this menu, please type a valid response (ie, 1, 2, 3, 4)");
+            break;
+
+        }
+
+
+       // return true;
     }
 
 }
