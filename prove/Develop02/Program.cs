@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 // Some creative notes that I could include, is inserting a few parameters into the prompt generator, so that the prompts don't overlap or repeat until they've been experienced.
 // I could also make sure that the user has the option to choose a different prompt if they want to. 
-class MainMenu 
+class Program
 {
 
     private JournalEntry journal = new JournalEntry();
@@ -22,12 +22,14 @@ class MainMenu
     }
     static void Main(string[] args)
     {
-        
+        Program program = new Program();
+        program.RunProgram();
     }
         
     private void DisplayMenu()
     {
-        Console.WriteLine("The Ultimate Journaling System. Does it have a name? Well no, but you do and that's what matters. This is the all in one hub, documenting and storing your memories for the future!");
+        Console.WriteLine("The Ultimate Journaling System. Does it have a name? Well no, but you do and that's what matters.");
+        Console.WriteLine("This is the all in one hub, documenting and storing your memories for the future!");
         Console.WriteLine("This is the Main Menu:");
         Console.WriteLine("1. Access File (type 1)");
         Console.WriteLine("2. New Prompt (type 2)");
@@ -42,7 +44,7 @@ class MainMenu
         switch(maininput)
         {
             case "1":
-                JournalEntry();
+                StartJournal();
                 break;
 
             case "2":
@@ -64,6 +66,28 @@ class MainMenu
         }
 
        return true;
+    }
+
+    private void StartJournal()
+    {
+        journal.Display();
+    }
+
+    private void JournalPrompt()
+    {
+        string prompt = JournalEntry.GetRandomPrompt();
+        Console.WriteLine(prompt);
+        journal.Entry = Console.ReadLine();
+    }
+
+    private void SaveFile()
+    {
+        string filePath = "journal_file.txt";
+        using (StreamWriter writer = new StreamWriter(filePath, true))
+        {
+            writer.WriteLine(journal.ToString());
+            Console.WriteLine("The Journal Entry entered has officially been saved. Lets go!");
+        }
     }
 
 }

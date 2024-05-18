@@ -6,8 +6,8 @@ class SaveFile
         {
             foreach (var entry in entries)
             {
-                writer.WriteLine($"Date & Time: {entry._dateEntry}");
-                writer.WriteLine($"Journal Entry: {entry._userEntry}");
+                writer.WriteLine($"Date & Time: {entry.Date}");
+                writer.WriteLine($"Journal Entry: {entry.Entry}");
                 writer.WriteLine();
             }
 
