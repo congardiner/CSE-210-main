@@ -1,13 +1,13 @@
 using System;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+
 public class JournalEntry
 {
+    public DateTime Date { get; }
+    public string Words { get; private set; }
 
     // get;, and set; (two sets of accessors that I can use to return and assign new values -- just including this as reference as I continue to learn new syntax within csharp!)
     // used private set just so that it is stored within this class, as I've configured JournalEntry now to handle that instead. 
-    public DateTime Date { get; }
-    public string Words { get; private set; }
     private static List<string> prompts = new List<string>()
     {
         "What is one of the highlights from your day?",
@@ -25,11 +25,17 @@ public class JournalEntry
         "What brings you joy? Truly, what is helping you through life right now?",
         "What will you do tomorrow to make today memorable, worthwhile, and relivable?",
     };
-    
+
     public JournalEntry()
     {
         Date = DateTime.Now;
         Words = GetUserEntry();
+    }
+
+    public JournalEntry(string content)
+    {
+        Date = DateTime.Now;
+        Words = content;
     }
 
     public static string GetRandomPrompt()
@@ -45,12 +51,11 @@ public class JournalEntry
         Console.WriteLine(randomPrompt);
 
         Console.WriteLine("Journal Entry: ");
-        string journal = Console.ReadLine();
-
         return Console.ReadLine();
     }
 
-    // this is finally the best way to handle updating entries, and overall the journal.
+     // this is finally the best way to handle updating entries, and overall the journal.
+
     public void PromptUpdate(string newWords)
     {
         Words = newWords;
@@ -68,5 +73,4 @@ public class JournalEntry
     {
         return $"{Date.ToShortDateString()}: {Words}";
     }
-
 }

@@ -80,7 +80,17 @@ class Program
         Console.WriteLine(prompt);
 
         string UserInput = Console.ReadLine();
-        journal.newWords = Console.ReadLine();
+        
+        if (journal == null)
+        {
+            journal = new JournalEntry(UserInput);
+        }
+
+        else 
+        {
+            journal.PromptUpdate(UserInput);
+        }
+        
 
         journal.Display();
     }
