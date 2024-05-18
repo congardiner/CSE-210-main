@@ -5,8 +5,9 @@ public class JournalEntry
 {
 
     // get;, and set; (two sets of accessors that I can use to return and assign new values -- just including this as reference as I continue to learn new syntax within csharp!)
+    // used private set just so that it is stored within this class, as I've configured JournalEntry now to handle that instead. 
     public DateTime Date { get; }
-    public string Entry { get; set; }
+    public string Words { get; private set; }
     private static List<string> prompts = new List<string>()
     {
         "What is one of the highlights from your day?",
@@ -28,13 +29,7 @@ public class JournalEntry
     public JournalEntry()
     {
         Date = DateTime.Now;
-        Entry = GetUserEntry();
-    }
-
-    public JournalEntry(string entry)
-    {
-        Date = DateTime.Now;
-        Entry = entry;
+        Words = GetUserEntry();
     }
 
     public static string GetRandomPrompt()
@@ -51,23 +46,27 @@ public class JournalEntry
 
         Console.WriteLine("Journal Entry: ");
         string journal = Console.ReadLine();
-        Console.WriteLine();
 
+        return Console.ReadLine();
+    }
 
-        return journal;
+    // this is finally the best way to handle updating entries, and overall the journal.
+    public void PromptUpdate(string newWords)
+    {
+        Words = newWords;
     }
 
     public void Display()
     {
         Console.WriteLine($"Current Date/Time: {Date}");
-        Console.WriteLine($"Journal Entry: {Entry}");
+        Console.WriteLine($"Journal Entry: {Words}");
     }
 
     // this section will now enable me to have my datetime and my userentry fixated together, or concat.
     // ToShortDateString is excellent because it assigns the an ovveride to a previous method within a class to 'override' literally its previous behavior.
     public override string ToString()
     {
-        return $"{Date.ToShortDateString()}: {Entry}";
+        return $"{Date.ToShortDateString()}: {Words}";
     }
 
 }

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 class Program
 {
 
-    private JournalEntry journal = new JournalEntry();
+    private JournalEntry journal;
 
     public void RunProgram()
     {
@@ -44,11 +44,11 @@ class Program
         switch(maininput)
         {
             case "1":
-                StartJournal();
+                AccessFile();
                 break;
 
             case "2":
-                JournalPrompt();
+                StartJournal();
                 break;
 
             case "3":
@@ -70,6 +70,7 @@ class Program
 
     private void StartJournal()
     {
+        journal = new JournalEntry();
         journal.Display();
     }
 
@@ -77,16 +78,49 @@ class Program
     {
         string prompt = JournalEntry.GetRandomPrompt();
         Console.WriteLine(prompt);
-        journal.Entry = Console.ReadLine();
+
+        string UserInput = Console.ReadLine();
+        journal.newWords = Console.ReadLine();
+
+        journal.Display();
     }
+
 
     private void SaveFile()
     {
+        if (journal == null)
+        {
+            Console.WriteLine("Text hasn't been inputted, the journal entry cannot yet be saved.");
+            return;
+        }
+
         string filePath = "journal_file.txt";
+
         using (StreamWriter writer = new StreamWriter(filePath, true))
         {
             writer.WriteLine(journal.ToString());
             Console.WriteLine("The Journal Entry entered has officially been saved. Lets go!");
+        }
+    }
+
+
+    private void AccessFile()
+    {
+        string filePath = "journal_file.txt";
+        if (File.Exists(filePath))
+        {
+            string[] lines = File.ReadAllLines(filePath);
+            Console.WriteLine("All of Your Journal Entries: ");
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+        
+        else
+        {
+        Console.WriteLine("The prompt has been initiated to access your journal. This may take a few moments dependent on how many files are open in vs code...");
         }
     }
 
