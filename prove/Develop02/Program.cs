@@ -44,11 +44,11 @@ class Program
         switch(maininput)
         {
             case "1":
-                AccessFile();
+                OpenFile();
                 break;
 
             case "2":
-                StartJournal();
+                JournalPrompt();
                 break;
 
             case "3":
@@ -68,31 +68,24 @@ class Program
        return true;
     }
 
-    private void StartJournal()
-    {
-        journal = new JournalEntry();
-        journal.Display();
-    }
-
     private void JournalPrompt()
     {
         string prompt = JournalEntry.GetRandomPrompt();
+
         Console.WriteLine(prompt);
 
-        string UserInput = Console.ReadLine();
-        
-        if (journal == null)
-        {
-            journal = new JournalEntry(UserInput);
-        }
+        Console.Write("Journal Title: ");
 
-        else 
-        {
-            journal.PromptUpdate(UserInput);
-        }
-        
+        string title = Console.ReadLine();
 
+        Console.Write("Response: ");
+
+        string userInput = Console.ReadLine();
+
+        journal = new JournalEntry(title, userInput);
+        
         journal.Display();
+
     }
 
 
@@ -113,8 +106,8 @@ class Program
         }
     }
 
-
-    private void AccessFile()
+// 
+    private void OpenFile()
     {
         string filePath = "journal_file.txt";
         if (File.Exists(filePath))

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 public class JournalEntry
 {
     public DateTime Date { get; }
+    public string Title { get; private set; }
     public string Words { get; private set; }
 
     // get;, and set; (two sets of accessors that I can use to return and assign new values -- just including this as reference as I continue to learn new syntax within csharp!)
@@ -26,15 +28,10 @@ public class JournalEntry
         "What will you do tomorrow to make today memorable, worthwhile, and relivable?",
     };
 
-    public JournalEntry()
+    public JournalEntry(string title, string content)
     {
         Date = DateTime.Now;
-        Words = GetUserEntry();
-    }
-
-    public JournalEntry(string content)
-    {
-        Date = DateTime.Now;
+        Title = title;
         Words = content;
     }
 
@@ -56,15 +53,17 @@ public class JournalEntry
 
      // this is finally the best way to handle updating entries, and overall the journal.
 
-    public void PromptUpdate(string newWords)
+    public void PromptUpdate(string newWords, string title)
     {
         Words = newWords;
+        Title = title;
     }
 
     public void Display()
     {
         Console.WriteLine($"Current Date/Time: {Date}");
-        Console.WriteLine($"Journal Entry: {Words}");
+        Console.WriteLine($"Journal Title: {Title}");
+        Console.WriteLine($"Journal Entry: {Words}");   
     }
 
     // this section will now enable me to have my datetime and my userentry fixated together, or concat.
