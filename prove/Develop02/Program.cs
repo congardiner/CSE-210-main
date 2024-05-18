@@ -5,14 +5,27 @@ using System.Runtime.CompilerServices;
 
 // Some creative notes that I could include, is inserting a few parameters into the prompt generator, so that the prompts don't overlap or repeat until they've been experienced.
 // I could also make sure that the user has the option to choose a different prompt if they want to. 
-class mainMenu 
+class MainMenu 
 {
+
+    private JournalEntry journal = new JournalEntry();
+
+    public void RunProgram()
+    {
+        bool options = true;
+
+        while (options)
+        {
+            DisplayMenu();
+            options = UserInput();
+        }
+    }
     static void Main(string[] args)
     {
-        DisplayMenu();
+        
     }
-
-    static void DisplayMenu()
+        
+    private void DisplayMenu()
     {
         Console.WriteLine("The Ultimate Journaling System. Does it have a name? Well no, but you do and that's what matters. This is the all in one hub, documenting and storing your memories for the future!");
         Console.WriteLine("This is the Main Menu:");
@@ -29,29 +42,28 @@ class mainMenu
         switch(maininput)
         {
             case "1":
-            journalEntry();
-            break;
+                JournalEntry();
+                break;
 
             case "2":
-            journalPrompt();
-            break;
+                JournalPrompt();
+                break;
 
             case "3":
-            SaveFile();
-            break;
+                SaveFile();
+                break;
 
             case "4":
-            Console.WriteLine("Thank you for using the headspace journal, see you next time!");
-            break;
+                Console.WriteLine("Thank you for using the headspace journal, see you next time!");
+                return false;
 
             default:
-            Console.WriteLine("That is not a valid option in this menu, please type a valid response (ie, 1, 2, 3, 4)");
-            break;
+                Console.WriteLine("That is not a valid option in this menu, please type a valid response (ie, 1, 2, 3, 4)");
+                break;
 
         }
 
-
-       // return true;
+       return true;
     }
 
 }
