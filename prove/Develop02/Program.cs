@@ -3,6 +3,10 @@ using System.IO;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
+// Official Note on Creativity: I added a method in my journal class that inserts the option for a Title within the Journal, as an object, so that it just keeps things nicer in the overall presentation of the journal once
+// once it has been called in the terminal, outside of this really trying to narrow down the different csharp syntax(s) as there have been some new ones introduced in order to get to this point so far! Looking forward to 
+// continuing to learn more next week!
+
 // Some creative notes that I could include, is inserting a few parameters into the prompt generator, so that the prompts don't overlap or repeat until they've been experienced.
 // I could also make sure that the user has the option to choose a different prompt if they want to. 
 class Program
