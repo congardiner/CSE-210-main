@@ -30,6 +30,7 @@ public class JournalEntry
 
     public JournalEntry(string title, string content)
     {
+        // I don't believe that I used the proper syntax here with having an underscore _ since I used a constructor here. //
         Date = DateTime.Now;
         Title = title;
         Words = content;
