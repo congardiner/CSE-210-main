@@ -30,7 +30,7 @@ class Fraction
         _bottom = bottom;
     }
 
-
+    // methods that were suggested, implemented below, how complex can I use the methods in terms of producing new content?
     public string GetFractionString()
     {
         string fraction = $"{_top}/{_bottom}.";
