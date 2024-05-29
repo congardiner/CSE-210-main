@@ -1,4 +1,5 @@
 using System;
+using System.Dynamic;
 using System.Reflection.Emit;
 
 class Reference
@@ -8,9 +9,15 @@ class Reference
     private int _firstVerse;
     private int _secondVerse;
 
-    public ScriptureCitation(string _book, int _chapter, int _firstVerse)
+    public ScriptureReference(string _book, int _chapter, int _firstVerse)
     {
-
-        
+        _book = Book;
+        _chapter = Chapter;
+        _firstVerse = Verse;
     }
+
+
+    GetScriptureReference();
+
+
 }

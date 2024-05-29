@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 
 class Words 
@@ -33,7 +34,10 @@ class Words
             return;
         }
 
-        for // before; condition; after)
+    
+    
+        
+        // before; condition; after
 
         // this will be for iterating through each of the words, 3 at a time until all are hidden. //
 
