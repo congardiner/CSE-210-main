@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 
 class Words 
@@ -32,9 +33,13 @@ class Words
             return;
         }
 
-        // need to update this seciton so that it will actually hide and then revel a word with a test case. //
+        for // before; condition; after)
 
-        
+        // this will be for iterating through each of the words, 3 at a time until all are hidden. //
+
+
+
+        // need to update this seciton so that it will actually hide and then revel a word with a test case. //
 
     }
 

@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        // learned on Youtube as I've been exploring C# //
+        Console.Title = "Scripture Generator";
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WindowHeight = 60;
+
+
 
         Words words = new Words();
 
@@ -15,8 +21,6 @@ class Program
         Scripture scripture = new scripture();
 
         scripture.DisplayScripture();
-
-        Words words = new Words("Testing Words Section:");
 
         
     }

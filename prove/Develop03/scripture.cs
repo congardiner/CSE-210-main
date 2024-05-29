@@ -13,19 +13,23 @@ class Scripture
 // here are my constructors //
 private Scripture(string verse, string reference, string word)
 {
-    Verse = verse;
-    Reference = reference;
-    Word = word;
+    _verse = verse;
+    _reference = reference;
+    _word = word;
 
 }
+
+// a list to store the scripture itself, then split into reference and words, foreach for words.
+// ether 12:4
+
 
 
 public void DisplayScripture()
 {
-    Console.WriteLine($"Verse: {Verse}");
-    Console.WriteLine($"Scripture Text: {scriptureText}");
-    Console.WriteLine($"Reference: {reference}");
-    Console.WriteLine($"Word: {word}");
+    Console.WriteLine($"Verse: {_verse}");
+    Console.WriteLine($"Scripture Text: {_scriptureText}");
+    Console.WriteLine($"Reference: {_reference}");
+    Console.WriteLine($"Word: {_word}");
 
     // I think that I need to handle the objects separately within this code, so that it is passed in between. //
 }
