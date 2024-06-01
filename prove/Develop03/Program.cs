@@ -10,18 +10,34 @@ class Program
     static void Main(string[] args)
     {
         // learned on Youtube as I've been exploring C# //
+
         Console.Title = "Scripture Memorizer Generator Application";
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WindowHeight = 60;
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WindowHeight = 10;
 
+        // method for calling my scripture reference for the first verse.
 
+        Reference singleVerseRef = new Reference("Alma 11", 12, 3);
+        Console.WriteLine(singleVerseRef.GetScriptureReference());
 
+        // method for calling my scripture reference for the second verse.
+
+        Reference verseRange = new Reference("Alma", 37, 38, 39);
+        Console.WriteLine(verseRange.GetScriptureReference());
+
+        string textScriptures = "Sample Testing for my scriptures to see if this actually works!";
+        Scripture scripture = new Scripture(textScriptures);
+
+        Console.WriteLine("Original Scripture: " + scripture.GetScripture());
+
+        scripture.HideWords(3);
+        Console.WriteLine("3 words have been hidden: " + scripture.GetScripture());
         
         // masked words are not being hidden with whitespace?
         
-        Scripture scripture = new Scripture();
-
-        scripture.DisplayScripture();
+        
+        // Scripture scripture = new Scripture();
+        // scripture.DisplayScripture();
 
         
     }
