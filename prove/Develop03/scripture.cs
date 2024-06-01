@@ -20,25 +20,25 @@ class Scripture
     public void HideWords(int count)
     {
         Random random = new Random();
-        List<int> hiddenWordIndices = new List<int>();
+        List<int> hiddenWordCycle = new List<int>();
         // before; condition; after as my notes say //
         for (int i = 0; i < _listWords.Count; i++)
         {
-            if (!_listWords[i].RevealWord)
+            if (!_listWords[i].IsHidden)
             {
-                hiddenWordIndices.Add(i);
+                hiddenWordCycle.Add(i);
             }
         }
 
         // module found for math that will assist in hidewords ensuring that they actually cycle through. //
-
-        int wordsToHide = Math.Min(count, hiddenWordIndices.Count);
+        // 
+        int wordsToHide = Math.Min(count, hiddenWordCycle.Count);
 
         for (int i = 0; i < wordsToHide; i++)
         {
-            int index = hiddenWordIndices[random.Next(hiddenWordIndices.Count)];
-            _listWords[index].RevealWordComplete();
-            hiddenWordIndices.Remove(index);
+            int index = hiddenWordCycle[random.Next(hiddenWordCycle.Count)];
+            _listWords[index].HideWord();
+            hiddenWordCycle.Remove(index);
         }
     }
 
@@ -59,7 +59,7 @@ class Scripture
     {
         foreach (var word in _listWords)
         {
-            if (!word.RevealWord)
+            if (!word.IsHidden)
             {
                 return false;
             }
@@ -67,10 +67,3 @@ class Scripture
         return true;
     }
 }
-
-
-// here are my constructors //
-
-// a list to store the scripture itself, then split into reference and words, foreach for words.
-
-// just will handle a list of the scriptures and then send it to the Program. 

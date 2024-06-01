@@ -2,6 +2,7 @@ using System;
 
 // for my creative notes for this project, I've been doing some personal projects outside of this class to learn some more about c# so that when the group project comes around I am an asset to the team, with that being said, I learned how to edit, adjust, and use the terminal in C# this week. 
 // Here are some of my references that I used to learn and further develop my skills to code //
+// this channel has been immensely helpful to learning and combatting the fatigue of mastering some of the basic syntax of C#: Brackeys 
 // https://learn.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split //
 
 
@@ -16,15 +17,15 @@ class Program
         Console.WindowHeight = 10;
 
         // method for calling my scripture reference for the first verse.
-        
+
         Reference singleVerseRef = new Reference("Alma 11", 12, 3);
         Console.WriteLine(singleVerseRef.GetScriptureReference());
 
-        // method for calling my scripture reference for the second verse.
-
+        // method for calling my scripture reference for the second verse. Still testing within my scripture class, not quite working just yet with the array I have setup. 
+        /*
         Reference verseRange = new Reference("Alma", 37, 38, 39);
         Console.WriteLine(verseRange.GetScriptureReference());
-
+        */
 
         // scripture class methods are all being called here with my word class too //
         string scriptureText = "And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people.";
@@ -57,9 +58,9 @@ class Program
 
         if (scripture.ProgramComplete())
         {
-            Console.WriteLine("\nAll words are hidden, do you know what the scripture is? Now is the time to test it!");
+            Console.WriteLine("\nAll words are shown now, do you know what the scripture is? Now is the time to test it!");
+            Console.WriteLine("\nTry the scripture generator again to see if you can perform this test from memory this time!");
         }
-
 
 
         else

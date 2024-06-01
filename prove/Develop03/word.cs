@@ -6,25 +6,24 @@ class Words
     // encapsulates my instances using my private identifier. //
     private string _word;
     private string _hiddenWord;
-    private bool _revealWord;
+    private bool _ishidden;
 
     // calls them locally within just this class. // 
     public Words(string word)
     {
         _word = word;
         _hiddenWord = new string('_', word.Length);
-        _revealWord = false;
+        _ishidden = false;
     }
 
-    public string HiddenWord => _hiddenWord;
+    public string HiddenWord => _ishidden ? _hiddenWord : _word;
 
-    public bool RevealWord => _revealWord;
+    public bool IsHidden => _ishidden;
 
     // new operator(s) that I learned to use for boolean expressions: ! will reverse as null-forgiving, or the expression as true or false, dependent on the reversal being used. //
-   public void RevealWordComplete()
+   public void HideWord()
    {
-        _revealWord = true;
-        _hiddenWord = _word;
+        _ishidden = true;
    }
 
 }
