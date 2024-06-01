@@ -16,17 +16,9 @@ class Words
         _revealWord = false;
     }
 
-    public string HiddenWord
-    {
-        get {return _revealWord ? _word : _hiddenWord; } 
-    }
+    public string HiddenWord => _hiddenWord;
 
-    // this will be the section for the reveal, and need to create a method with objects that will sort through the words. 
-
-    public bool RevealWord
-    {
-        get {return _revealWord; }
-    }
+    public bool RevealWord => _revealWord;
 
     // new operator(s) that I learned to use for boolean expressions: ! will reverse as null-forgiving, or the expression as true or false, dependent on the reversal being used. //
    public void RevealWordComplete()

@@ -6,7 +6,6 @@ class Scripture
     // private list handled just within scripture //
     private List<Words> _listWords;
 
-    // hold the scriptures here in a list // 
     public Scripture(string scripture)
     {
         _listWords = new List<Words>();
@@ -18,35 +17,28 @@ class Scripture
         }
     }
 
-    
-// this will actually then be put into my program class, so that this is handled as an object, similar to the reference class that I made. //
-
     public void HideWords(int count)
     {
         Random random = new Random();
-        List<int> hiddenWordList = new List<int>();
+        List<int> hiddenWordIndices = new List<int>();
         // before; condition; after as my notes say //
-        for (int i=0; i < count; i++)
+        for (int i = 0; i < _listWords.Count; i++)
         {
             if (!_listWords[i].RevealWord)
             {
-                hiddenWordList.Add(i);
+                hiddenWordIndices.Add(i);
             }
         }
-        
 
-        // module found for math that will assist in hidewords ensuring that they actually cycle through.
-        int hidewords = Math.Min(count, hiddenWordList.Count);
+        // module found for math that will assist in hidewords ensuring that they actually cycle through. //
 
-        for (int i = 0; i < hidewords; i++)
+        int wordsToHide = Math.Min(count, hiddenWordIndices.Count);
+
+        for (int i = 0; i < wordsToHide; i++)
         {
-            // will iterate through the index until all of the words have been revealed. 
-            int index = hiddenWordList[random.Next(hiddenWordList.Count)];
-
-            // will call words of the index, reveal word called in word class?
+            int index = hiddenWordIndices[random.Next(hiddenWordIndices.Count)];
             _listWords[index].RevealWordComplete();
-            hiddenWordList.Remove(index);
-        
+            hiddenWordIndices.Remove(index);
         }
     }
 
@@ -61,6 +53,8 @@ class Scripture
         return string.Join(" ", words);
     }
 
+
+
     public bool ProgramComplete()
     {
         foreach (var word in _listWords)
@@ -70,12 +64,10 @@ class Scripture
                 return false;
             }
         }
-    
-    return true;
-
+        return true;
     }
-
 }
+
 
 // here are my constructors //
 

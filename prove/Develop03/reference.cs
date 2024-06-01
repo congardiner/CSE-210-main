@@ -7,30 +7,6 @@ class Reference
     private int _firstVerse;
     private int _secondVerse;
 
-    public string Book
-    {
-        get { return _book; }
-        private set { _book = value; }
-    }
-
-    public int Chapter 
-    {
-        get { return _chapter; }
-        private set { _chapter = value; }
-    }
-
-    public int FirstVerse
-    {
-        get { return _firstVerse; }
-        private set { _firstVerse = value; }
-    }
-
-    public int SecondVerse 
-    {
-        get { return _secondVerse; }
-        private set { _secondVerse = value; }
-    }
-
 // need to add all of the getters and setters to the program so that it is encapsulated correctly // 
     // this 
     public Reference(string book, int chapter, int firstVerse)
@@ -38,7 +14,7 @@ class Reference
         _book = book;
         _chapter = chapter;
         _firstVerse = firstVerse;
-        _secondVerse = 0;
+        _secondVerse = -1;
     }
 
     // this is for the handling of multiple verses //

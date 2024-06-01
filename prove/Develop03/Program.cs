@@ -1,6 +1,6 @@
 using System;
 
-
+// for my creative notes for this project, I've been doing some personal projects outside of this class to learn some more about c# so that when the group project comes around I am an asset to the team, with that being said, I learned how to edit, adjust, and use the terminal in C# this week. 
 // Here are some of my references that I used to learn and further develop my skills to code //
 // https://learn.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split //
 
@@ -12,11 +12,11 @@ class Program
         // learned on Youtube as I've been exploring C# //
 
         Console.Title = "Scripture Memorizer Application";
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WindowHeight = 10;
 
         // method for calling my scripture reference for the first verse.
-
+        
         Reference singleVerseRef = new Reference("Alma 11", 12, 3);
         Console.WriteLine(singleVerseRef.GetScriptureReference());
 
@@ -61,10 +61,10 @@ class Program
         }
 
 
-        
+
         else
         {
-            Console.WriteLine("\nYou chose to quit the program. Goodbye!");
+            Console.WriteLine("\nQuit was selected, you are exiting the program now. Happy Memorizing!");
         }
         
         // masked words are not being hidden with whitespace?
