@@ -18,7 +18,7 @@ class Program
 
         // method for calling my scripture reference for the first verse.
 
-        Reference singleVerseRef = new Reference("Alma 11", 12, 3);
+        Reference singleVerseRef = new Reference("Alma", 7, 11);
         Console.WriteLine(singleVerseRef.GetScriptureReference());
 
         // method for calling my scripture reference for the second verse. Still testing within my scripture class, not quite working just yet with the array I have setup. 
