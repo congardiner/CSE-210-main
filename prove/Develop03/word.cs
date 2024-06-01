@@ -1,7 +1,5 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
-
 
 class Words 
 {
@@ -14,49 +12,33 @@ class Words
     public Words(string word)
     {
         _word = word;
-        _hiddenWord = new string('*', word.Length);
+        _hiddenWord = new string('_', word.Length);
         _revealWord = false;
     }
 
     public string HiddenWord
     {
-        get {return _hiddenWord; } 
+        get {return _revealWord ? _word : _hiddenWord; } 
     }
 
-// this will be the section for the reveal, and need to create a method with objects that will sort through the words. 
+    // this will be the section for the reveal, and need to create a method with objects that will sort through the words. 
 
-    public bool RevealRandom
+    public bool RevealWord
     {
-
-        get { return _revealWord; }
-        set
-        {
-            _revealWord = value;
-            _hiddenWord = _revealWord ? _word : new string('*', _word.Length);
-    
-        }
-
+        get {return _revealWord; }
     }
 
     // new operator(s) that I learned to use for boolean expressions: ! will reverse as null-forgiving, or the expression as true or false, dependent on the reversal being used. //
-    public void RevealWord()
-    {
-        _revealWord = !_revealWord;
-        _hiddenWord = _revealWord ? _word : new string('*', _word.Length);
-    }
-
-  
+   public void RevealWordComplete()
+   {
+        _revealWord = true;
+        _hiddenWord = _word;
+   }
 
 }
     // will put each of the list of strings into words. //
 
+    // this will be for iterating through each of the words, 3 at a time until all are hidden. //
 
-        
-        // before; condition; after
-
-        // this will be for iterating through each of the words, 3 at a time until all are hidden. //
-
-
-
-        // need to update this seciton so that it will actually hide and then revel a word with a test case. //
+    // need to update this seciton so that it will actually hide and then reveal a word with a test case. //
 
