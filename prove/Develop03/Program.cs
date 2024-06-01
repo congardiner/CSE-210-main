@@ -30,6 +30,7 @@ class Program
         // scripture class methods are all being called here with my word class too //
         string scriptureText = "And he shall go forth, suffering pains and afflictions and temptations of every kind; and this that the word might be fulfilled which saith he will take upon him the pains and the sicknesses of his people.";
 
+
         Scripture scripture = new Scripture(scriptureText);
 
         Console.WriteLine("Original Scripture:");
