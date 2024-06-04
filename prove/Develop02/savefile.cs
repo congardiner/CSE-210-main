@@ -6,7 +6,10 @@ class SaveFile
         {
             foreach (var entry in entries)
             {
+                // changed the entries that are updated and saved with prior methods and attributes that have been called. //
                 writer.WriteLine($"Date & Time: {entry.Date}");
+                writer.WriteLine($"Journal Entry Title: {entry.Title}");
+               /* writer.WriteLine($"Prompt: {entry.PromptUpdate}"); */
                 writer.WriteLine($"Journal Entry: {entry.Words}");
                 writer.WriteLine();
             }
