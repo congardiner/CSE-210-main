@@ -70,20 +70,25 @@ public class Reflection : Mindfulness
         }
     }
 
-
     // this is my method for starting the activity, this will be replicated amongst the child classes that have been inherited, so that in essense its essentially the same. //
+    public void GetStartActivity()
+    {
 
+        Console.WriteLine(_startUpMsg);
+        DisplayRandomPrompt();
 
+        int elapsedTime = 0;
+        int questionPauseDuration = 5;
 
+        while (elapsedTime < _countDown)
+        {
+            string question = GetRandomQuestion();
+            Console.WriteLine(question);
+            ShowSpinner(questionPauseDuration);
+            elapsedTime += questionPauseDuration;
+        }
 
-        // 
-
-
-
-
-
-
-
-
-
+        Console.WriteLine(_endActivity);
+    }
+   
 }

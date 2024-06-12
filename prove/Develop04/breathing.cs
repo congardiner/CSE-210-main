@@ -11,16 +11,7 @@ public class Breathing : Mindfulness
     {
         _breathing = breathing;
     }
-
-
-    Console.WriteLine("Welcome to the Breathing Activity, the whole purpose of this is to actively guide you through breathing so that you can recenter yourself and live your life with greater peace of self.");
-
-    public string GetBreathing()
-    {
-        string 
-
-        return $"{_breathing} {}"
-    }
+    
     // need to have description of the activity //
 
     

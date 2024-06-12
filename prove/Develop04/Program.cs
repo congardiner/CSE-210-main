@@ -12,6 +12,8 @@ class Program
         // while loop that acts as a mainMenu for the mindfulness class, with the added options for reflection, listing, and breathing //
 
 
+        
+
         Mindfulness mindfulness = new Mindfulness(
         "Mindfulness Activity", 
         DateTime.Now.ToString(), 10, 
@@ -19,6 +21,21 @@ class Program
         "Thank you for taking the time to take care of yourself! It will pay off!",
         "Incorporated here are several activities centered around your wellbeing, namely, breathing, reflection, and listing based activities to help your headspace. Start today to embrace a new change!");
         Console.WriteLine(mindfulness.GetActivityDescription());
+
+
+        // instance for my reflection activity //
+
+        Reflection reflection = new Reflection(
+            "Reflection Activity",
+            DateTime.Now.ToString(),
+            30, // Total duration in seconds
+            "Welcome to the reflection activity.",
+            "Thank you for reflecting!",
+            "This activity involves thinking about meaningful experiences."
+        );
+
+        reflection.StartActivity();
+
 
         // need to make a while loop to simulate the Main Menu with options for the various activities //
 
@@ -33,7 +50,7 @@ class Program
         // what did I call for my breathing exercise to do again? //
     
         // need to insert a random parameter set for my prompts and questions that relate holistically to them //
-        
+
 
     }
 }
