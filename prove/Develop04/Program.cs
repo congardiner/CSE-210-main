@@ -4,22 +4,14 @@ using System.Runtime.CompilerServices;
 
 class Program
 {
+    // variables to store the amount that the activities are done //
+    static int breathingCount = 0;
+    static int reflectionCount = 0;
+    static int listingCount = 0;
+
+
     static void Main(string[] args)
     {
-        // expired boolean for when the timer is done, that can be set by the user, can put it into program.cs
-        // need to put an a countdown animation for the activities, could be different for each one, or the same regardless. 
-        // while loop that acts as a mainMenu for the mindfulness class, with the added options for reflection, listing, and breathing //
-
-        /*
-        Mindfulness mindfulness = new Mindfulness(
-        "Mindfulness Activity", 
-        DateTime.Now.ToString(), 10, 
-        "Welcome to the Mindfulness Application, this can become your all in one hub for taking care of yourself, in the simple ways that matter!",
-        "Thank you for taking the time to take care of yourself! It will pay off!",
-        "Incorporated here are several activities centered around your wellbeing, namely, breathing, reflection, and listing based activities to help your headspace. Start today to embrace a new change!");
-        */
-
-
 
         Breathing breathing = new Breathing(
             "Breathing Activty",
@@ -55,6 +47,7 @@ class Program
         while (!exit)
         {
             Console.Clear();
+            Console.WriteLine("Welcome!");
             Console.WriteLine("Mindfulness Main Menu");
             Console.WriteLine("1. Breathing Activity");
             Console.WriteLine("2. Reflection Activity");
@@ -68,14 +61,17 @@ class Program
             {
                 case "1":
                     breathing.StartUpBreathing();
+                    breathingCount++;
                     break;
 
                 case "2":
                     reflection.GetStartActivity();
+                    reflectionCount++;
                     break;
 
                 case "3":
                     listing.StartupListing();
+                    listingCount++;
                     break;
 
                 case "4":
@@ -90,21 +86,18 @@ class Program
             if (!exit)
             {
                 Console.WriteLine("Press any key to enter the menu, or startup the program please!");
+                Console.ReadKey();
             }
         }
+        // added an activity counter to display how many times they've done a certain activity //
+
+        Console.WriteLine("Activity Counter:");
+        Console.WriteLine($"Breathing Activity Count: {breathingCount}");
+        Console.WriteLine($"Reflection Activity Count: {reflectionCount}");
+        Console.WriteLine($"Listing Activity Count: {listingCount}");
 
 
-        // need to add a main menu option now //
-
-        // need to make a while loop to simulate the Main Menu with options for the various activities //
-
-
-        // this is where beathing will be handled //
-
-        // what did I call for my breathing exercise to do again? //
-    
-        // need to insert a random parameter set for my prompts and questions that relate holistically to them //
-
+        // added my own personalized exit message for the user. //
         Console.WriteLine("Its been a pleasure to serve you today, enjoy peace of mind in the real-life now, come back soon!");
 
     }

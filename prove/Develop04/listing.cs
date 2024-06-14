@@ -11,7 +11,7 @@ public class Listing : Mindfulness
     {
         _promptsList = new List<string>
         {
-            "What are some your favorite memories from your childhood?",
+            "What are some of your favorite memories from your childhood?",
             "Who are some superheroes in your life?",
             "What are the biggest advantages to being a college student?",
             "Why do you love your significant other?",
@@ -33,6 +33,16 @@ public class Listing : Mindfulness
         Random random = new Random();
         int promptList = random.Next(_promptsList.Count);
         return _promptsList[promptList];
+    }
+
+    private void ShowCountdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.WriteLine(i);
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine("Start listing now!");
     }
 
     // Show spinner method
@@ -76,10 +86,15 @@ public class Listing : Mindfulness
         string prompt = GetRandomPromptList();
         Console.WriteLine("\n" + prompt);
 
+        // Show countdown before starting the listing
+        Console.WriteLine("Get ready to start listing in...");
+        ShowCountdown(3); // Countdown of 3 seconds
+
+        // Start collecting user input
         DateTime endTime = DateTime.Now.AddSeconds(duration);
         while (DateTime.Now < endTime)
         {
-            Console.Write("Enter your responses here: ");
+            Console.Write("Enter your response: ");
             string response = Console.ReadLine();
 
             if (!string.IsNullOrEmpty(response))
@@ -97,7 +112,7 @@ public class Listing : Mindfulness
 
         // Display the user's responses after the timer ends
         Console.WriteLine("\nThe timer has ended, congratulations for taking the time to take care of yourself!");
-        Console.WriteLine("\nHere are your responses for this activity:");
+        Console.WriteLine($"\nYou have listed {_userList.Count} items. Here they are:");
 
         foreach (string response in _userList)
         {
@@ -106,6 +121,8 @@ public class Listing : Mindfulness
 
         // Display the standard finishing message
         Console.WriteLine(_endActivity);
+        Console.ReadKey();
     }
 }
+
 

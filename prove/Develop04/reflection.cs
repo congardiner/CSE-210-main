@@ -23,7 +23,8 @@ public class Reflection : Mindfulness
             "Think of a time when you did something that was exemplary",
             "Think of a time where you felt like you were in the clouds, with no worries",
             "Think of a time where you had to overcome a difficult obstacle",
-            "Think of a time that you were able to overcome a difficult circumstance?"
+            "Think of a time that you were able to overcome a difficult circumstance?",
+            "Think of a time that you had to face a fear."
         };
 
         _questions = new List<string>
@@ -65,47 +66,27 @@ public class Reflection : Mindfulness
             Console.Write(spinner[i % spinner.Length]);
             Thread.Sleep(delay);
 
-            // Move the cursor back to overwrite the previous spinner character
+            // Move the cursor back to overwrite the previous spinner (odd input, but something that I found in my learning) //
             Console.Write("\b");
         }
 
-            // Clear the last spinner character
+            // Clear the last spinner character added //
             Console.Write(" ");
             Console.Write("\b");
     }
 
     // here is a method that I found how to create online for a spinner //
-
-
-    /*
-    public void ShowSpinner(int duration)
-    {
-        int delay = 100;
-        string[] spinner = { "/", "-", "//", "|"};
-
-        for (int i = 0; i < duration * 1000 / delay; i++)
-        {
-            Console.WriteLine(spinner[i % spinner.Length]);
-            Thread.Sleep(delay);
-            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-        }
-
-        Console.Write(" ");
-        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-    }
-
-    */
-
-    // this is my method for starting the activity, this will be replicated amongst the child classes that have been inherited, so that in essense its essentially the same. //
     public void GetStartActivity()
     {
 
         Console.WriteLine(_startUpMsg);
-        DisplayRandomPrompt();
+        
 
         Console.Write("Please enter the desired duration in seconds for the Reflection Activity: ");
         string input = Console.ReadLine();
         int duration;
+
+        DisplayRandomPrompt();
 
         // Checks the duration that they want to specify //
         while (!int.TryParse(input, out duration) || duration <= 0)
@@ -127,7 +108,11 @@ public class Reflection : Mindfulness
             elapsedTime += questionPauseDuration + displayDuration;
         }
 
+
+        Console.WriteLine("\nThe Timer for this activity has ended.");
         Console.WriteLine(_endActivity);
+        Console.ReadKey();
+
     }
    
 }
