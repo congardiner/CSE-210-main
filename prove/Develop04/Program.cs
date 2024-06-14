@@ -24,7 +24,7 @@ class Program
         Breathing breathing = new Breathing(
             "Breathing Activty",
             DateTime.Now.ToString(), 10,
-            "Welcome to the Mindfulness Application, this can become your all in one hub for taking care of yourself, in the simple ways that matter!",
+            "Welcome to the Breathing Activity",
             "Thank you for breathing, it literally will keep you going in life, keep it up!",
             "This Activity involves guided breathing exercises, that are designed to assist you in being able to regulate your stress through breathing. A simple exercise that takes 3-5 minutes that can save you mountain loads of stress in the longrun."            
         );

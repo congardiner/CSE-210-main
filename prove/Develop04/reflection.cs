@@ -55,8 +55,29 @@ public class Reflection : Mindfulness
         return _questions[questionList];
     }
 
+    public void ShowSpinner(int duration)
+    {
+        int delay = 100; // Duration of each spinner
+        string[] spinner = { "/", "-", "\\", "|" };
+
+        for (int i = 0; i < duration * 1000 / delay; i++)
+        {
+            Console.Write(spinner[i % spinner.Length]);
+            Thread.Sleep(delay);
+
+            // Move the cursor back to overwrite the previous spinner character
+            Console.Write("\b");
+        }
+
+            // Clear the last spinner character
+            Console.Write(" ");
+            Console.Write("\b");
+    }
+
     // here is a method that I found how to create online for a spinner //
 
+
+    /*
     public void ShowSpinner(int duration)
     {
         int delay = 100;
@@ -68,7 +89,12 @@ public class Reflection : Mindfulness
             Thread.Sleep(delay);
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
         }
+
+        Console.Write(" ");
+        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
     }
+
+    */
 
     // this is my method for starting the activity, this will be replicated amongst the child classes that have been inherited, so that in essense its essentially the same. //
     public void GetStartActivity()
@@ -77,15 +103,28 @@ public class Reflection : Mindfulness
         Console.WriteLine(_startUpMsg);
         DisplayRandomPrompt();
 
+        Console.Write("Please enter the desired duration in seconds for the Reflection Activity: ");
+        string input = Console.ReadLine();
+        int duration;
+
+        // Checks the duration that they want to specify //
+        while (!int.TryParse(input, out duration) || duration <= 0)
+        {
+            Console.Write("Invalid input. Please enter a positive number for the duration in seconds: ");
+            input = Console.ReadLine();
+        }
+
         int elapsedTime = 0;
         int questionPauseDuration = 5;
+        int displayDuration = 3;
 
-        while (elapsedTime < _countDown)
+        while (elapsedTime < duration)
         {
             string question = GetRandomQuestion();
             Console.WriteLine(question);
-            ShowSpinner(questionPauseDuration);
-            elapsedTime += questionPauseDuration;
+            ShowSpinner(displayDuration);
+            Thread.Sleep(3000);
+            elapsedTime += questionPauseDuration + displayDuration;
         }
 
         Console.WriteLine(_endActivity);

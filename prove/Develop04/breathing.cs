@@ -1,6 +1,5 @@
 using System;
-using System.Reflection;
-using System.Reflection.Metadata;
+using System.Threading;
 
 
 public class Breathing : Mindfulness
@@ -20,7 +19,7 @@ public class Breathing : Mindfulness
     {
         Console.WriteLine(_startUpMsg);
 
-        Console.WriteLine("Please enter the time that you would like to do this breathing exercise for in seconds: ");
+        Console.WriteLine("Please enter the an interval amount that you would like to do this in? (each interval is 5 seconds) ");
         string input = Console.ReadLine();
         int duration;
 
