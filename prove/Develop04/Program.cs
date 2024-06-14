@@ -28,7 +28,7 @@ class Program
             "Thank you for breathing, it literally will keep you going in life, keep it up!",
             "This Activity involves guided breathing exercises, that are designed to assist you in being able to regulate your stress through breathing. A simple exercise that takes 3-5 minutes that can save you mountain loads of stress in the longrun."            
         );
-        
+
         breathing.StartUpBreathing();
 
         // instance for my reflection activity //
@@ -57,17 +57,12 @@ class Program
 
 
 
+        // need to add a main menu option now //
+
         // need to make a while loop to simulate the Main Menu with options for the various activities //
 
 
         // this is where beathing will be handled //
-/*
-        Console.WriteLine("Please enter a specific duration that you would like the breathing exercise to last");
-        string input = Console.ReadLine();
-
-        Console.WriteLine("Breathe in...");
-        Console.WriteLine("Breathe out...");
-*/
 
         // what did I call for my breathing exercise to do again? //
     

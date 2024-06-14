@@ -7,10 +7,11 @@ public class Breathing : Mindfulness
 {
     private string _breathing;
 
-    Breathing(string breathing, string title, int time, int countdown, string endactivity, string activitydescription) : base(title, time, countdown, endactivity, activitydescription) 
+    public Breathing(string title, string time, int countdown, string startUpMsg, string endactivity, string activitydescription) 
+        : base(title, time, countdown, startUpMsg, endactivity, activitydescription) 
     {
-        _breathing = breathing;
     }
+    
 
 
     // need to add my breathing in and out method and call it below in what will become my startup activity. //
@@ -69,7 +70,7 @@ public class Breathing : Mindfulness
     }
 
 
- 
+}
 
 
     // need to have description of the activity //
@@ -87,5 +88,3 @@ public class Breathing : Mindfulness
     // need to add the getter and setters as well as the countdown, and parameters with the strings for how things are supposed to behave together. //
 
 
-
-}
