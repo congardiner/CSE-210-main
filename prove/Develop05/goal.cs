@@ -7,8 +7,7 @@ public class Goal
 
     public virtual string AddActivity()
     {
-
-
+        
 
 
     }
@@ -23,9 +22,6 @@ public class Goal
     public virtual string ShowList()
     {
         // show the list of active goals that have been outputted. //
-
-
-
 
     }
 

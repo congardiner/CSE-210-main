@@ -13,7 +13,20 @@ public class Simple : Goal
         return base.AddActivity();
     }
 
-    
+    public override string ShowScore()
+    {
+        // add a constructor to get base score, ++ score, and add other scores //
+
+
+    }
+
+    public override string ShowList()
+    {
+        // show the list of active goals that have been outputted. //
+
+    }
+
+
 
 
 

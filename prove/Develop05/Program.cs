@@ -24,23 +24,22 @@ class Program
             switch (choice)
             {
                 case "1":
-                    
+                    Simple.AddActivity();
                     break;
 
                 case "2":
-                    
+                    Eternal.AddActivity();
                     break;
 
                 case "3":
-                    
-                    
+                    Checklist.AddActivity();
                     break;
                 case "4":
-
+                    // add save file method //
                     break;
                 
                 case "5":
-
+                    // add load file of goals //
                     break;
 
                 case "6":
@@ -58,5 +57,9 @@ class Program
                 Console.ReadKey();
             }
         }
+
+        // I am going to add Display methods for the polymorphic methods and their respective classes. //
+
+        // add Display method for score, list of goals, and 
     }
 }
