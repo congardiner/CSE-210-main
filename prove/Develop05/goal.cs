@@ -28,6 +28,6 @@ public class Goal
     }
 
 
-
+    // use an abstract base class for the main goal class, and then use the methods from there. //
 
 }
