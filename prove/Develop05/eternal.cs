@@ -5,7 +5,7 @@ public class Eternal : Goal
 {
     int _bonusPoints;
 
-    
+
 
     public override string AddActivity()
     {
@@ -29,6 +29,8 @@ public class Eternal : Goal
         // will have a baseline int points = 0; and ++ for bonus points when the eternal goal has been self-reported //
         
         return int _points + _bonusPoints;
+
+        // missing a variable for the total points instance which is why its not accessible // 
     }
 
 

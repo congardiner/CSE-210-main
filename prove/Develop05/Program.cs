@@ -24,17 +24,18 @@ class Program
             switch (choice)
             {
                 case "1":
-                    Simple.AddActivity();
+                    simple.AddActivity();
                     break;
 
                 case "2":
-                    Eternal.AddActivity();
+                    eternal.AddActivity();
                     break;
 
                 case "3":
-                    Checklist.AddActivity();
+                    checklist.AddActivity();
                     break;
                 case "4":
+                    
                     // add save file method //
                     break;
                 

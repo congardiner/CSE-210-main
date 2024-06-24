@@ -3,7 +3,7 @@ using System.Net;
 
 public class Goal
 {
-    private int points;
+    private int _points;
 
     public virtual string AddActivity()
     {
@@ -12,8 +12,10 @@ public class Goal
 
     }
 
-    public virtual string ShowScore()
+    public virtual string ShowScore(int points)
     {
+        points = _points;
+
         // add a constructor to get base score, ++ score, and add other scores //
 
 
