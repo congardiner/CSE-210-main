@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Program
+public class ProgramClass
 {
     static int goalCounter = 0;
     static int simpleCounter = 0;
@@ -50,14 +50,16 @@ public class Program
             {
                 case "1":
                     Simple newgoal = new Simple("", 0, "", "");
-                    newgoal.AddActivity();
+                    Console.WriteLine(newgoal.AddActivity());
                     goal.Add(newgoal);
                     goalCounter++;
                     simpleCounter++;
                     break;
 
                 case "2":
-        
+                    Eternal neweternal = new Eternal("", 0, "", "");
+                    Console.WriteLine(neweternal.AddActivity());
+                    goal.Add(neweternal);
                     goalCounter++;
                     eternalCounter++;
                     break;
