@@ -23,11 +23,14 @@ public class Checklist : Goal
     {
         return base.ShowList();
         // show the list of active goals that have been outputted. //
+
+        // maybe I could add a way to display the list of goals with a semicolon 
+        // and add a checkmark to it when the goal has been marked as completed? //
     }
 
-    public string AddChecklistGoal()
+    public string AddChecklist()
     {
-        
+        // I would need to add a list that could store the checklist goals, along with my connected save class built into the other classes, so by default they can save within various parts of the program, rather than just at the menu. //
 
 
     }
