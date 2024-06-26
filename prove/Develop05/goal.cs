@@ -4,22 +4,22 @@ using System.Net;
 
 public abstract class Goal
 {
-    protected string _activityName;
+    protected string _goalName;
     protected int _points;
     // based off of this, I'd want to use a protected instance //
-    protected string _activityType;
+    protected string _goalType;
     // will describe the activity that the user wants to identify it with //
-    protected string _activityDesc;
+    protected string _goalDesc;
     protected bool _completed;
 
     // added my constuctor to initialize my base class instances //
 
-    public Goal(string activityName, int points, string activityType, string activityDesc)
+    public Goal(string goalName, int points, string goalType, string goalDesc)
     {
-        _activityName = activityName;
+        _goalName = goalName;
         _points = points;
-        _activityType = activityType;
-        _activityDesc = activityDesc;
+        _goalType = goalType;
+        _goalDesc = goalDesc;
         _completed = false;
     }
 
@@ -35,7 +35,7 @@ public abstract class Goal
     public virtual string ShowList()
     {
 
-        return $"Active Goals: {_activityName}, Goal Type: {_activityType}";
+        return $"Active Goals: {_goalName}, Goal Type: {_goalType}";
         // show the list of active goals that have been outputted. //
 
     }
@@ -45,7 +45,6 @@ public abstract class Goal
         _completed = true;
         return _completed;
         // create a when loop for _activityType being completed and showing crossed off. //
-
     }
 
     // use an abstract base class for the main goal class, and then use the methods from there. //
