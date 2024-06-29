@@ -37,7 +37,7 @@ public class Simple : Goal
         }
 
         return $"Added a Simple Goal to the list: {_goalName} that holds a point value of {_points}. Here is the included description that you wrote: {_goalDesc}";
-        // need to add _activityName, and _points to be allocated per the activity, or could prompt the user for what the goal is, along with how many points they think it should be worth? //
+        // need to add _goalName, and _points to be allocated per the activity, or could prompt the user for what the goal is, along with how many points they think it should be worth? //
     }
 
     public override string ShowScore()

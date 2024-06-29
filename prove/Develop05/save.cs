@@ -1,47 +1,57 @@
 using System;
-/*
+using System.Collections.Generic;
+using System.IO;
+
 public class Save 
 {
     // will add previously used method of using a txt file that will be allocated to this program //
 
-    /*
+
     private string _saveFile;
-    
-    using(StreamWriter writefile = new StreamWriter("goals.txt"))
+
+    public Save(string saveFile)
     {
-        writefile = WriteLine("text example for the file");
+        _saveFile = saveFile;
     }
 
-    
-    
-    // need to load in the dependency libary for the StreamWriter //
-    // added my previously made save method from my journal class //
-
-    private string save;
-
-    public Save(string savefile)
+    public void FileSaveMethod(List<Goal> goals)
     {
-        save = savefile;
-    }
-
-    public void FileSaveMethod(Goal goal)
-    {
-        using (StreamWriter writer = new StreamWriter(save))
+        using (StreamWriter writer = new StreamWriter(_saveFile))
         {
-            foreach (string line in data)
+            foreach (Goal goal in goals)
             {
-                writer.WriteLine(goal.ToString(), append = true);
+                writer.WriteLine(goal.ToString());
             }
         }
     }
 
-    public string[] LoadFileMethod()
+    public List<Goal> LoadFileMethod()
     {
-        
+        List<Goal> goals = new List<Goal>();
+
+        if (File.Exists(_saveFile))
+        {
+            using (StreamReader readfile = new StreamReader(_saveFile))
+            {
+                string goaltext;
+                // had to re-edit my instance variable, as I had mixed up my camelCase instance//
+                while ((goaltext = readfile.ReadLine()) != null)
+                {
+                    Goal goal = Goal.FromString(goaltext);
+                    goals.Add(goal);
+                }
+            }
+        }
+
+        else
+        {
+            Console.WriteLine("The file you are looking for doesn't yet exist. Try using the Save Method in the Main Menu first!");
+        }
+
+        return goals;
     }
 
-
-
 }
+    // need to load in the dependency libary for the StreamWriter //
+    // added my previously made save method from my journal class //
 
-*/

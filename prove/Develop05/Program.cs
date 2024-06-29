@@ -20,8 +20,12 @@ public class ProgramClass
         // Another option for the more credit is I could create a level system as suggested, using an if, else statement, with say incremental leveling up happening after every 1000 points. //
         // for the extra credit I could add a goal counter of those that have been counted vs those that haven't been counted //
         // color code the priorities of the goals you have, red mission critical, yellow is semi-critical, and green is all clear for now //
+
+        // created instance for saving the file to this txt file // 
+        string saveFile = "eternalquestgoals.txt";
+        Save saved = new Save(saveFile);
     
-        List<Goal> goal = new List<Goal>();
+        List<Goal> goals = new List<Goal>();
 
         // can add the objects for my created goals here? //
         
@@ -39,44 +43,66 @@ public class ProgramClass
             Console.WriteLine("3. Checklist Goal");
             Console.WriteLine("4. Save Goal(s)");
             Console.WriteLine("5. Load Goal(s)");
-            Console.WriteLine("6. Exit Program");
+            Console.WriteLine("6. Record Progress");
+            Console.WriteLine("7. Display the Total Score!");
+            Console.WriteLine("8. Exit Program");
 
-            Console.WriteLine("Enter Your Choice");
+            Console.WriteLine("\nEnter Your Choice Here: ");
             string choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
-                    Simple newgoal = new Simple("", 0, "", "");
+                    Simple newgoal = new Simple("", 0, "Simple", "");
                     Console.WriteLine(newgoal.AddActivity());
-                    goal.Add(newgoal);
+                    goals.Add(newgoal);
                     goalCounter++;
                     simpleCounter++;
                     break;
 
                 case "2":
-                    Eternal neweternal = new Eternal("", 0, "", "");
+                    Eternal neweternal = new Eternal("", 0, "Eternal", "");
                     Console.WriteLine(neweternal.AddActivity());
-                    goal.Add(neweternal);
+                    goals.Add(neweternal);
                     goalCounter++;
                     eternalCounter++;
                     break;
 
                 case "3":
-    
+                    Checklist newchecklist = new Checklist("", 0, "Checklist", "", 100, 5);
+                    Console.WriteLine(newchecklist.AddActivity());
+                    goals.Add(newchecklist);
                     goalCounter++;
                     checklistCounter++;
                     break;
+
                 case "4":
-                    
-                    // add save file method //
+                    saved.FileSaveMethod(goals);
+                    Console.WriteLine("Goals you have written have been saved to the created file.");
+                    // added my save Method //
                     break;
                 
                 case "5":
+                    goals = saved.LoadFileMethod();
+                    Console.WriteLine("Goals loaded straight from your file: ");
+                    foreach (Goal goal in goals)
+                    {
+                        Console.WriteLine(goal.ShowList());
+                    }
                     // add load file of goals //
                     break;
 
                 case "6":
+                    Console.WriteLine("[X] will represent completed goals, whereas [ ] will represent goals that are still in progress.");
+                    Console.WriteLine("\nReminder that Eternal Goals are always going to be in progress!");
+                    MarkGoalAsComplete(goals);
+                    break;
+
+                case "7":
+                    DisplayScores(goals);
+                    break;
+
+                case "8":
                     exit = true;
                     break;
 
@@ -100,6 +126,36 @@ public class ProgramClass
         Console.WriteLine($"Checklist: {checklistCounter}");
             
         }
-
     }
+
+
+    // added two static void methods that handle Displaying of total score points and as well as ensuring that the goals are actually marked complete. //
+    static void DisplayScores(List<Goal> goals)
+    {
+        Console.WriteLine("Scores for all goals-- ");
+        foreach (Goal goal in goals)
+        {
+            Console.WriteLine(goal.ShowScore());
+        }
+    }
+
+    // tested my Mark Goal as complete method that is contained just within the program class, with the exception of calling _goalName, which is used within the goal class. //
+
+    static void MarkGoalAsComplete(List<Goal> goals)
+    {
+        Console.WriteLine("Enter the name of the goal you want to mark as complete:");
+        string goalName = Console.ReadLine();
+        Goal goalToMark = goals.Find(g => g.GoalName == goalName);
+
+        if (goalToMark != null)
+        {
+            goalToMark.ShowComplete();
+            Console.WriteLine($"Goal '{goalName}' marked as complete.");
+        }
+        else
+        {
+            Console.WriteLine($"Goal '{goalName}' not found.");
+        }
+    }
+
 }

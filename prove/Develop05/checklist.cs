@@ -4,17 +4,17 @@ using System.Runtime.CompilerServices;
 
 public class Checklist : Goal
 {
-    private int _checklistbonuspoints;
+    private int _checklistbonuspoints = 100;
     // this will be rewarded once they get all of their checklist goals done //
-    private int _currentCheck;
+    private int _desiredAmount;
     private int _completeCheck;
 
 
-    public Checklist(string goalName, int points, string goalType, string goalDesc, int checklistbonuspoints, int completeCheck) : base(goalName, points, goalType, goalDesc)
+    public Checklist(string goalName, int points, string goalType, string goalDesc, int checklistbonuspoints, int desiredAmount) : base(goalName, points, goalType, goalDesc)
     {
         _checklistbonuspoints = checklistbonuspoints;
-        _currentCheck = 0;
-        _completeCheck = completeCheck;
+        _desiredAmount = desiredAmount;
+        _completeCheck = 0;
     }
 
     public override string AddActivity()
@@ -40,7 +40,21 @@ public class Checklist : Goal
             }
         }
 
-        return $"Added a Checklist Goal to the list: {_goalName} that holds a point value of {_points}. Here is the included description that you wrote: {_goalDesc}";
+        Console.WriteLine("How many times will this goal need to be completed in order to be marked officially as finished?");
+        if (int.TryParse(Console.ReadLine(), out int totalCount))
+        {
+            _completeCheck = totalCount;
+        }
+        else
+        {
+            Console.WriteLine("Needs to be an integer!");
+            Console.WriteLine("The default value will be set to 1 to avoid this in the future!");
+            _completeCheck = 1;
+        }
+
+
+        return $"Added a Checklist Goal to the list: {_goalName} that holds a point value of {_points}. Here is the included description that you wrote: {_goalDesc}. Completed Attempts Required {_completeCheck}";
+        
     }
 
     public override string ShowScore()
@@ -51,13 +65,36 @@ public class Checklist : Goal
     public override string ShowList()
     {
         string xmark = _completed ? "[X]" : "[ ]";
-        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc} Progress Made: {_currentCheck}/{_completeCheck}";
+        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc} Progress Made: {xmark} {_completeCheck}/{_desiredAmount}";
 
     }
 
     public override bool ShowComplete()
     {
-        return _currentCheck >= _completeCheck;
+       _completeCheck++;
+       if (_completeCheck == _desiredAmount)
+       {
+            _completed = true;
+            _points += _checklistbonuspoints;
+            // added a default value above for the protected variable, just making it a flat 100 points. //
+            Console.WriteLine($"You did it! \nFor Completing your checklist with {_goalName} my program will now award you some points. \nExtra Points: {_checklistbonuspoints}");
+       }
+
+       else
+       {
+            Console.WriteLine($"Checklist Goal: '{_goalName}' Times Completed: {_completeCheck}/{_desiredAmount} times.");
+       }
+
+       // I added the correct countage for the amount of times that the checklist had been marked off. //
+
+        return _completed;
+    }   
+
+
+
+    public override string ToString()
+    {
+        return $"{base.ToString()}|{_checklistbonuspoints}|{_completeCheck}";
     }
 
 
