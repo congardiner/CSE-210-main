@@ -8,6 +8,12 @@ public class ProgramClass
     static int eternalCounter = 0;
     static int checklistCounter = 0;
 
+    static int totalPoints = 0;
+    static int currentLevel = 1;
+    static int levelUpAmount = 500;
+
+    // I didn't want to add another class, and have it encapsulated, so I just added a static method as the points methods were already routed here. //
+
     
     // will add all methods here for my various class method(s), especially those that have been polymorphized during this program, addactivity, showlist, showscore, etc //
     // all of my created objects stored here //
@@ -132,13 +138,26 @@ public class ProgramClass
     // added two static void methods that handle Displaying of total score points and as well as ensuring that the goals are actually marked complete. //
     static void DisplayScores(List<Goal> goals)
     {
-        Console.WriteLine("Scores for all goals-- ");
+        // here is where I'll add my leveling up system!
+        Console.WriteLine($"Scores for all goals-- {totalPoints}");
+        Console.WriteLine($"Current Active Level: {currentLevel}");
+
         foreach (Goal goal in goals)
         {
             Console.WriteLine(goal.ShowScore());
         }
     }
 
+    static void LevelUpPoints(int points)
+    {
+        totalPoints += points;
+        
+        if (totalPoints >= currentLevel * levelUpAmount)
+        {
+            currentLevel++;
+            Console.WriteLine($"Every 500 points you get to levelup! \nYou've now reached level {currentLevel}!\nLets go!");
+        }
+    }
     // tested my Mark Goal as complete method that is contained just within the program class, with the exception of calling _goalName, which is used within the goal class. //
 
     static void MarkGoalAsComplete(List<Goal> goals)

@@ -42,6 +42,13 @@ public abstract class Goal
 
     // added logic for creating a way to mark off completion of goals. //
 
+    public int ShowLevel()
+    {
+        return _points / 500;
+        // I have it set so that every 500 points you get leveled up, there is no max level.
+    }
+    // this is going to be for my extra mile requirement, the leveling up system. //
+
 
     // added these testing methods to see how I can parse the goals, using serialization and deserialization as described in the documentation for using StreamReader and StreamWriter. //
     public override string ToString()
