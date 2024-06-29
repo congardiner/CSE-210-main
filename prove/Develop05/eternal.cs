@@ -16,7 +16,7 @@ public class Eternal : Goal
 
     public override string AddActivity()
     {
-        Console.WriteLine("What would you like to call this Eternal Goal? (\nRemember this is one that doesn't ever end, because its eternal!)");
+        Console.WriteLine("What would you like to call this Eternal Goal? \n(Remember this is one that doesn't ever end, because its eternal!)");
         _goalName = Console.ReadLine();
 
         Console.WriteLine("How would you describe this eternal goal?");
@@ -25,7 +25,7 @@ public class Eternal : Goal
         bool pointValidation = false;
         while (!pointValidation)
         {
-            Console.WriteLine("How many points should each occurrence of this Eternal Activity be worth?");
+            Console.WriteLine("How many points should each occurrence of this Eternal Quest be worth?");
             if (int.TryParse(Console.ReadLine(), out int points))
             {
                 _points = points;

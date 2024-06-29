@@ -22,13 +22,13 @@ public class Checklist : Goal
         Console.WriteLine("What would you like to call this Checklist Goal?");
         _goalName = Console.ReadLine();
 
-        Console.WriteLine("How would you describe this activity?");
+        Console.WriteLine("How would you describe this Checklist Goal?");
         _goalDesc = Console.ReadLine();
 
         bool pointValidation = false;
         while (!pointValidation)
         {
-            Console.WriteLine("How many points should this Checklist Activity be worth?");
+            Console.WriteLine("How many points should this Checklist Goal actually be worth?");
             if (int.TryParse(Console.ReadLine(), out int points))
             {
                 _points = points;
@@ -51,29 +51,23 @@ public class Checklist : Goal
     public override string ShowList()
     {
         string xmark = _completed ? "[X]" : "[ ]";
-        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc} Progress Made: {} ;
+        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc} Progress Made: {_currentCheck}/{_completeCheck}";
 
     }
 
     public override bool ShowComplete()
     {
-        return _completed;
+        return _currentCheck >= _completeCheck;
     }
+
+
 }
 
 
-    // Need to add my private variable also need my constructor and then a display method to showcase my points system and the list og goals //
-  
-
-
-
-
+    // Need to add my private variable also need my constructor and then a display method to showcase my points system and the list og goals /
         // need to add the points method 
         // add a constructor to get base score, ++ score, and add other scores //
-
-
         // show the list of active goals that have been outputted. //
-
         // maybe I could add a way to display the list of goals with a semicolon 
         // and add a checkmark to it when the goal has been marked as completed? //
    

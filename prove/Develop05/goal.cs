@@ -6,11 +6,11 @@ public abstract class Goal
 {
     protected string _goalName;
     protected int _points;
-    // based off of this, I'd want to use a protected instance //
     protected string _goalType;
-    // will describe the activity that the user wants to identify it with //
     protected string _goalDesc;
     protected bool _completed;
+    // need to add method for checking off my goals! 
+    // thoughts for this: could be a simple if statement of select 1, 2, 3, or 4 if you completed a goal, which one would you like to mark off, and then close the program? //
 
     // added my constuctor to initialize my base class instances //
 

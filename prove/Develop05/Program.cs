@@ -93,7 +93,7 @@ public class ProgramClass
         
         // edit note: added my _goalCounter instance here to count how many goals have been worked on for the day //
 
-        Console.WriteLine("Amount of Recorded Entries for Goals:");
+        Console.WriteLine("Amount of Recorded Entries for Goals---");
         Console.WriteLine($"Totals Accounted: {goalCounter}.");
         Console.WriteLine($"Simple: {simpleCounter} ");
         Console.WriteLine($"Eternal: {eternalCounter}");
