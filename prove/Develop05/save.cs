@@ -18,7 +18,28 @@ public class Save
 
     // added my previously made save method from my journal class //
 
+    private string save;
 
+    public Save(string savefile)
+    {
+        save = savefile;
+    }
+
+    public void FileSaveMethod(Goal goal)
+    {
+        using (StreamWriter writer = new StreamWriter(save))
+        {
+            foreach (string line in data)
+            {
+                writer.WriteLine(goal.ToString(), append = true);
+            }
+        }
+    }
+
+    public string[] LoadFileMethod()
+    {
+        
+    }
 
 
 

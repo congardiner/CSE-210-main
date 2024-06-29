@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 
 public class Simple : Goal
@@ -13,10 +14,10 @@ public class Simple : Goal
 
     public override string AddActivity()
     {
-        Console.WriteLine("What would you like to call this Simple Goal?");
+        Console.WriteLine("What would you like to call this Simple Goal? \nPro Tip here: Keep It Simple!");
         _goalName = Console.ReadLine();
 
-        Console.WriteLine("How would you describe this activity?");
+        Console.WriteLine("How would you describe this simple goal?");
         _goalDesc = Console.ReadLine();
 
         bool pointValidation = false;
@@ -46,14 +47,15 @@ public class Simple : Goal
 
     public override string ShowList()
     {
-        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc}";
+        string xmark= _completed ? "[X]" : "[ ]";
+        return $"Current goals: {xmark} {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc}";
         // show the list of active goals that have been outputted. //
-
     }
 
     public override bool ShowComplete()
     {
-        return _points > 0;
+        _completed = true;
+        return _completed;
         // not sure yet how to show that the goal has been marked complete other than just putting an 'X' next to it. //
     }
 

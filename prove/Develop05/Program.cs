@@ -10,8 +10,6 @@ public class ProgramClass
 
     
     // will add all methods here for my various class method(s), especially those that have been polymorphized during this program, addactivity, showlist, showscore, etc //
-    // will add a list to store all of the concurrent goals and their types within the main menu. //
-
     // all of my created objects stored here //
 
 
@@ -19,7 +17,7 @@ public class ProgramClass
     {
         // list of resources used for my program --
         // https://stackoverflow.com/questions/7569904/easiest-way-to-read-from-and-write-to-files
-        // 
+        // Another option for the more credit is I could create a level system as suggested, using an if, else statement, with say incremental leveling up happening after every 1000 points. //
         // for the extra credit I could add a goal counter of those that have been counted vs those that haven't been counted //
         // color code the priorities of the goals you have, red mission critical, yellow is semi-critical, and green is all clear for now //
     

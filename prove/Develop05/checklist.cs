@@ -1,12 +1,20 @@
 using System;
 using System.Collections.Generic;
-/*
+using System.Runtime.CompilerServices;
+
 public class Checklist : Goal
 {
-    private int _checklist;
+    private int _checklistbonuspoints;
+    // this will be rewarded once they get all of their checklist goals done //
+    private int _currentCheck;
+    private int _completeCheck;
 
-    public Checklist(string goalName, int points, string goalType, string goalDesc) : base(goalName, points, goalType, goalDesc)
+
+    public Checklist(string goalName, int points, string goalType, string goalDesc, int checklistbonuspoints, int completeCheck) : base(goalName, points, goalType, goalDesc)
     {
+        _checklistbonuspoints = checklistbonuspoints;
+        _currentCheck = 0;
+        _completeCheck = completeCheck;
     }
 
     public override string AddActivity()
@@ -42,17 +50,19 @@ public class Checklist : Goal
 
     public override string ShowList()
     {
-        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc}";
+        string xmark = _completed ? "[X]" : "[ ]";
+        return $"Current goals: {_goalName}, Goal Type: {_goalType}, Goal Description: {_goalDesc} Progress Made: {} ;
+
     }
 
     public override bool ShowComplete()
     {
-        return _points > 0;
+        return _completed;
     }
 }
 
-*/
-    // Need to add my private instance, also need my constructor and then a display method to showcase my points system and the list og goals //
+
+    // Need to add my private variable also need my constructor and then a display method to showcase my points system and the list og goals //
   
 
 
