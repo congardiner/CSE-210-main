@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 
 public class Video 
@@ -14,7 +15,17 @@ public class Video
     // method for GetVideoDescription()
 
 
+    public Video(string title, string author, int seconds)
+    {
+        _title = title;
+        _author = author;
+        _length = seconds;
+    }
 
+    public string GetVideoDescription()
+    {
+        return $"title: {_title} | author: {_author} | {_length}";
+    }
 
 
 }
