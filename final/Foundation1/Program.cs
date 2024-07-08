@@ -38,10 +38,13 @@ class Program
         video1.AddComments (new Comment { _personName = "SolderCatBoy11", _personComment = "Nice video, great explanation!" } );
         video1.AddComments (new Comment { _personName = "BuiltIt", _personComment = "I build those pyramids! Not those aliens!"} );
         video1.AddComments (new Comment { _personName = "Martian Explorer", _personComment = "Yeah living the dream bro!"} );
+        video1.AddComments (new Comment { _personName = "RadicalBro", _personComment = "See you in Area51 at the the Great Run!"} );
 
         video2.AddComments (new Comment { _personName = "GeneSplicer117", _personComment = "Have you tried the new method created using Gemini?"} );
         video2.AddComments (new Comment { _personName = "ScienceEveryday1234", _personComment = "Easy on the explanation, will subscribe!"} );
         video2.AddComments (new Comment { _personName = "RandomSub", _personComment = "subscribe to my new channel, I am not a bot"} );
+        video2.AddComments (new Comment { _personName = "MaterialYou", _personComment = "What does this mean for cloning moving forward? Any implications?"} );
+
 
         video3.AddComments (new Comment { _personName = "JediBannerUnited", _personComment = "That is no jedi! @worstshowever"} );
         video3.AddComments (new Comment { _personName = "CanonForever", _personComment = "Not my Canon Disney!"} );

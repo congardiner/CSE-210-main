@@ -32,8 +32,9 @@ public class Video
 
     public void DisplayVideoDescription()
     {
+        // edit note: forgot my () within my GetCommentCount that was making it so that it wasn't callable //
          Console.WriteLine($"Title: {_title} | Author: {_author} | Length: {_length} in seconds");
-         Console.WriteLine($"Numbers of Comments on the Video: {GetCommentCount}");
+         Console.WriteLine($"Numbers of Comments on the Video: {GetCommentCount()}");
          Console.WriteLine("Comments: ");
 
          foreach (var comment in _comments)

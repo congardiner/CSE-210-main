@@ -13,22 +13,5 @@ public class Comment
     {
         Console.WriteLine($"- {_personName}: {_personComment}");
     }
-    
-    public string CreatePerson()
-    {
-        return $"{_personName}";
-    }
-
-    public string CreateComment()
-    {
-        return $"{_personComment}";
-    }
-
-    // public CreatePerson()
-    // public CreateComment(person)
-
-
-
-
 
 }
