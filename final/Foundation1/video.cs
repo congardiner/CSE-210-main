@@ -12,13 +12,10 @@ public class Video
 
     private List<Comment> _comments = new List<Comment>();
     // measured in seconds, just a note to remind me later //
-
-    // constructor for activating my variables and then displaying them with a get and set. //
-
     // method for GetVideoDescription()
     // method for AddComments
     // method for GetCommentCount
-    // 
+    // edit note: added my () to resolve error with the Count function displaying. //
 
     public void AddComments(Comment comment)
     {
