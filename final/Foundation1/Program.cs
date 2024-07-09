@@ -7,11 +7,11 @@ class Program
     static void Main(string[] args)
     {
 
-        // add a list for the videos 
+        // added a list 
 
         List<Video> videos = new List<Video>();
 
-
+        // test cases for each video
         Video video1 = new Video 
         {
         _title = "New Youtube Channel", 
@@ -54,7 +54,7 @@ class Program
         videos.Add(video2);
         videos.Add(video3);
 
-     
+        // edit note: will now iterate and use my display method to showcase the three Youtube videos with names, comments, and the amount //
         foreach (var video in videos)
         {
             video.DisplayVideoDescription();
