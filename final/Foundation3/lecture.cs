@@ -7,8 +7,12 @@ public class Lecture : Event
 
     // need to set a constructor, 
 
+    private Lecture(string eventSpeaker, string eventCapacity, string eventTitle, string eventType, string eventDescription, string time, string eventAddress, string eventDate) : base(eventTitle, eventDescription, time, eventAddress, eventDate)
+    {
 
-    public string GetFullDetails()
+    }
+
+    private string GetFullDetails()
     {
         return $"Speaker Name: {_eventSpeaker} | Event Capacity: {_eventCapacity} |\n Event Title: {_eventTitle} | {_eventDescription} | {_eventDate} |\n {_time} | {_eventDate} | {_eventAddress}";
 

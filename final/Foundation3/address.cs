@@ -21,7 +21,7 @@ public class Address
 
     public string GetAddressSummary()
     {
-
+        Console.WriteLine($"Street Address: {_streetAddress} | City: {_city} | {_state} | {_country}");
     }
 
 }
