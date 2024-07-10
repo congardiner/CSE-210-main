@@ -4,23 +4,27 @@ using System;
 public class Customer
 {
     private string _customerName;
-    private string _customerAddress;
+    private Address _customerAddress;
 
-    private Customer(string customerName, string customerAddress)
+    // LLM explained the need on how to pass a class instance like this, basically using the class name, then declaring the instantiated instance, and making it known within the class. //
+    public Customer(string customerName, Address address)
     {
+        
         _customerName = customerName;
-        _customerAddress = customerAddress;
+        _customerAddress = address;
     }
 
-    public GetAddressUSA()
+    public bool LivesInUSA()
     {
-        foreach Address address 
+        return _customerAddress.USAddressCheck();
     }
 
-
-
-
-
-
+    public void DisplayCustomer()
+    {
+        Console.WriteLine($"Client Account: {_customerName}");
+        Console.WriteLine($"Address:");
+        Console.WriteLine(_customerAddress.GetAddressSummary());
+        Console.WriteLine($"USA Address Check: {LivesInUSA()}");
+    }
 
 }

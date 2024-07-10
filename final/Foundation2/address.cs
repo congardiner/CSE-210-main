@@ -8,7 +8,7 @@ public class Address
     private string _state;
     private string _country;
 
-    private Address(string streetAddress, string city, string state, string country)
+    public Address(string streetAddress, string city, string state, string country)
     {
         _streetAddress = streetAddress;
         _city = city;
@@ -16,16 +16,16 @@ public class Address
         _country = country;
     }
 
-    public GetUSAAddressCheck()
+    public bool USAddressCheck()
     {
-
-
+        return _country.ToLower() == "usa" || _country.ToLower() == "united states";
+        // edit note: made a bool method that will check whether the address is inserted as an abbreviation or spelled out entirely
+        // to match case sensitivities, I've also included a ToLower function that will check to see if it is either as well. //
     }
 
-    public ReturnAddressSummary()
+    public string GetAddressSummary()
     {
-        Console.WriteLine("Address Summary: ");
-        Console.WriteLine($"\n{_streetAddress} | {_city} | {_state} | {_country}");
+        return $"\n{_streetAddress}, {_city}, {_state}, {_country}";
     }
 
 

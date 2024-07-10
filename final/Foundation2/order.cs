@@ -1,35 +1,40 @@
 using System;
-using System.Security.Cryptography;
 
 public class Order
 {
     private int _usaShippingCost = 5;
     private int _outsideShippingCost = 35;
-    private List<Product> products = new List<Product>();
+    private List<Product> _products;
+    private Customer _customer;
 
 
-
-    private void AddOrder()
+    public Order(Customer customer)
     {
+        _customer = customer;
+        _products = new List<Product>();
+    }
+    
 
+    private void AddProduct(Product product)
+    {
+        _products.Add(product);
     }
 
     private void TotalPrice()
     {
         
-        Console.WriteLine($"Total Price of the Order: {_orderTotal}");
     }
 
-    private void GetPackingLabel()
+    public string GetPackingLabel()
     {
         
-        //Console.WriteLine($"")
+        return $"Shipping Label:\n {_customer.}";
 
     }
 
-    private void GetShippingLabel()
+    public string GetShippingLabel()
     {
-
+        return $"Shipping Label:\n{product.GetProductName}";
 
     }
 

@@ -9,10 +9,9 @@ public class Reception : Event
         _rsvpEmail = rsvpEmail;
     }
 
-    
+
     public string GetDetails()
     {
-
 
     }
 
