@@ -22,7 +22,8 @@ public class Order
 
     private void GetPackingLabel()
     {
-
+        
+        //Console.WriteLine($"")
 
     }
 
