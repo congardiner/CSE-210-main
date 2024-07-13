@@ -28,13 +28,4 @@ public class Address
         return $"\n{_streetAddress}, {_city}, {_state}, {_country}";
     }
 
-
-
-
-
-
-
-
-
-
 }

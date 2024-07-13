@@ -19,6 +19,16 @@ public class Customer
         return _customerAddress.USAddressCheck();
     }
 
+    public string GetCustomerName()
+    {
+        return _customerName;
+    }
+
+    public Address GetAddress()
+    {
+        return _customerAddress;
+    }
+
     public void DisplayCustomer()
     {
         Console.WriteLine($"Client Account: {_customerName}");
