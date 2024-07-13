@@ -34,7 +34,7 @@ public class Order
         return $"Origin Label: 123 Quarter West, Junction City, Colorado, United States";
     }
 
-    public string GetPackingLabel()
+    public string GetContentsLabel()
     {
         
         return $"Packing Label:\n" + string.Join("\n", _products.Select(p => $"{p.GetProductName()} (ID: {p.GetProductID()})"));

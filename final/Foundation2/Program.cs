@@ -28,17 +28,17 @@ class Program
         order2.AddProduct(product4, 3);
         order2.AddProduct(product5, 1);
 
-        Console.WriteLine("Order 1 Contents: ");
+        Console.WriteLine("Order 1: ");
         Console.WriteLine(order1.GetOriginLabel());
-        Console.WriteLine(order1.GetPackingLabel());
+        Console.WriteLine(order1.GetContentsLabel());
         Console.WriteLine(order1.GetShippingLabel());
         Console.WriteLine($"Total Order Price: ${order1.TotalPrice():F2}");
         Console.WriteLine();
         Console.WriteLine();
 
-        Console.WriteLine("Order 2 Contents: ");
+        Console.WriteLine("Order 2: ");
         Console.WriteLine(order2.GetOriginLabel());
-        Console.WriteLine(order2.GetPackingLabel());
+        Console.WriteLine(order2.GetContentsLabel());
         Console.WriteLine(order2.GetShippingLabel());
         Console.WriteLine($"Total Order Price: ${order2.TotalPrice():F2}");
         Console.WriteLine();
