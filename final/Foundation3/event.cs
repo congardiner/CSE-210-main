@@ -3,12 +3,12 @@ using System;
 
 public class Event
 {
-    private string _eventTitle;
-    private string _eventType;
-    private string _eventDescription;
-    private TimeSpan _time;
-    private string _eventAddress;
-    private string _eventDate;
+    protected string _eventTitle;
+    protected string _eventType;
+    protected string _eventDescription;
+    protected TimeSpan _time;
+    protected string _eventAddress;
+    protected string _eventDate;
 
 
     public string GetStandardDetails()
@@ -19,7 +19,7 @@ public class Event
 
     public string GetFullDetails()
     {
-        
+        return $"Title: {_eventTitle} | {_eventDescription} | \n{_time} | Date: {_eventDate} | Address: {_eventAddress} |";
     }
 
     public string GetShortDescription()
