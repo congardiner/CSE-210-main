@@ -3,7 +3,7 @@ using System;
 public class Lecture : Event
 {
     private string _eventSpeaker;
-    private string _eventCapacity;
+    private int _eventCapacity;
 
     // need to set a constructor, 
 
@@ -12,6 +12,7 @@ public class Lecture : Event
     {
         _eventTitle = title;
         _eventType = "Lecture";
+        _eventDescription = description;
         _time = DateTime.TimeOfDay;
         _eventDate = dateTime.ToShortDateString();
         _eventAddress = address;
