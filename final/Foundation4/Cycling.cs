@@ -8,31 +8,21 @@ public class Cycling : Activity
     // edit note: will need to add my constructor to actuate my base parent derived polymorphized classes //
     
 
-    
+    public Cycling(DateTime date, int durationMinutes, double speed, bool metricSystem) :base(date, durationMinutes, metricSystem)
+    {
+        _speed = speed;
+    }
     public override double GetSpeed()
     {
-        return base.GetSpeed();
-    }
-
-    public override double GetPace()
-    {
-        return base.GetPace();
+        return _speed;
     }
 
     public override string GetDistance()
     {
-        return base.GetDistance();
+        double distance = (_speed * GetDurationMinutes()) / 60;
+        return MetricSystem() ? distance : ConvertToMiles(distance);
+   
     }
-
-    public override string GetSummary()
-    {
-        return base.GetSummary();
-    }
-
-
-
-
-
 
 
 

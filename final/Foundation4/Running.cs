@@ -6,20 +6,13 @@ public class Running : Activity
     private double _distance;
 
     // need to add my constructor(s) with my base method, that will be used to polymorphisize this class //
-
-    public override double GetSpeed()
+    public Running(DateTime date, int durationMinutes, double distance) : base(date, durationMinutes)
     {
-        return base.GetSpeed();
+        _distance = distance;
     }
-
-    public override double GetPace()
+    public override double GetDistance()
     {
-        return base.GetPace();
-    }
-
-    public override string GetSummary()
-    {
-        return base.GetSummary();
+        return IsMetric() ? _distance : ConvertToMiles(_distance);
     }
 
 }
