@@ -17,7 +17,7 @@ public class Outdoor : Event
 
     public override string GetFullDetails()
     {
-        return base.GetFullDetails() + $"The weather forecast for the Event is {_weatherForeCast} & temperature being {_weatherTemp}";
+        return base.GetFullDetails() + $"|\n The weather forecast for the Event is {_weatherForeCast} & temperature being {_weatherTemp} |";
     }
 
 

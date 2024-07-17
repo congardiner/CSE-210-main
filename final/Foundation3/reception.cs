@@ -12,7 +12,7 @@ public class Reception : Event
 
     public override string GetFullDetails()
     {
-        return base.GetFullDetails() + $"\nRSVP Email:{_rsvpEmail}";
+        return base.GetFullDetails() + $"RSVP Email:{_rsvpEmail}";
     }
 
 
