@@ -14,6 +14,7 @@ public class Lecture : Event
         _eventType = "Lecture";
         _eventDescription = description;
         _time = DateTime.TimeOfDay;
+        // not sure what to set the time to yet, as the system settings could mess up what the user sees if I use that library of DateTime.Now() or DateTime.TImeFromFile
         _eventDate = dateTime.ToShortDateString();
         _eventAddress = address;
         _eventSpeaker = eventSpeaker;
@@ -22,7 +23,7 @@ public class Lecture : Event
 
     public override string GetFullDetails()
     {
-        return base.GetFullDetails() + "\nSpeaker Name: {_eventSpeaker} | Event Capacity: {_eventCapacity}";
+        return base.GetFullDetails() + $"\nSpeaker Name: {_eventSpeaker} | Event Capacity: {_eventCapacity}";
     }
 
 

@@ -11,18 +11,19 @@ public class Event
     protected string _eventDate;
 
 
-    public string GetStandardDetails()
+    public virtual string GetStandardDetails()
     {
         return $"Title: {_eventTitle} | {_eventDescription} | \n{_time} | Date: {_eventDate} | Address: {_eventAddress} |";
 
     }
 
-    public string GetFullDetails()
+    public virtual string GetFullDetails()
     {
         return $"Title: {_eventTitle} | {_eventDescription} | \n{_time} | Date: {_eventDate} | Address: {_eventAddress} |";
     }
 
-    public string GetShortDescription()
+    // can either set my methods as virtual or abstract, however, then the entire class becomes abstract as well. //
+    public virtual string GetShortDescription()
     {
         return $"Type of Event: {_eventType}\nTitle {_eventTitle} | {_eventDate}";
     }
