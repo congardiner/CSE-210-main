@@ -19,9 +19,9 @@ public class Address
 
 
 
-    public string GetAddressSummary()
+    public override string ToString()
     {
-        return $"Street Address: {_streetAddress} | City: {_city} | {_state} | {_country}";
+        return $"{_streetAddress}, {_city}, {_state}, {_country}";
     }
 
 }

@@ -6,10 +6,22 @@ public class Event
     protected string _eventTitle;
     protected string _eventType;
     protected string _eventDescription;
-    protected TimeSpan _time;
+    protected DateTime _time;
     protected string _eventAddress;
     protected string _eventDate;
 
+    public Event(string eventTitle, string eventType, string eventDescription, DateTime time, string eventAddress, string eventDate)
+        {
+        // edit note: need to actuate the rest of my constructors from the parent class, as this is where I left off //
+        _eventTitle = eventTitle;
+        _eventType = eventType;
+        _eventDescription = eventDescription;
+        // need to adjust the time constraints as builtin by .net and just use the DateTime func//
+        _time = time;
+        _eventAddress = eventAddress;
+        _eventDate = eventDate;
+
+    }
 
     public virtual string GetStandardDetails()
     {
