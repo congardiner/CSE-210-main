@@ -13,8 +13,20 @@ public class Swimming : Activity
         _laps = laps;
     }
 
-    public override double GetDistance()
+    public override double GetDistance(bool inKm)
     {
-        return _laps * 50 / 1000 * 0.62;
+        double distance = _laps * 50 / 1000 * 0.62;
+        return inKm ? distance : ConvertMiles(distance);
+    }
+
+    public override double GetSpeed(bool inKph)
+    {
+        double speed = GetDistance(true) / GetDurationMinutes() * 60;
+        return inKph ? speed : ConvertMiles(speed);
+    }
+
+    public override double GetPace(bool inKm)
+    {
+        return GetDurationMinutes() / GetDistance(inKm);
     }
 }
