@@ -26,7 +26,8 @@ public abstract class Activity
     public virtual string GetSummary()
     {
         // edit note: need to add the units for the various units of measurement and a bool to determine which one to use? //
-        return $"\n{_date} + ({_durationMinutes} min):" +
+        // edit note: concat using ToString func for the date, and found the GetType() function for calling an attribute for the activity itself, or the object created as an instance of the activity class. //
+        return $"\n{_date.ToString("MM-dd-yyyy")} {GetType().Name} & {_durationMinutes} minutes of exercise:" +
                $"\nDistance: {GetDistance(true):F2} kilometers per hour ({GetDistance(false):F2} miles per hour)" +
                $"\nSpeed: {GetSpeed(true):F2} kilometer per hour ({GetSpeed(false):F2} mph)," +
                $"\nPace: {GetPace(true):F2} min per kilometer ({GetPace(false):F2} min per mile)"; 
