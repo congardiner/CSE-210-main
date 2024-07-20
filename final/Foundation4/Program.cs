@@ -5,6 +5,9 @@ class Program
     static void Main(string[] args)
     {
 
+        Console.Title = "Performance Activity Tracker";
+        Console.BackgroundColor = ConsoleColor.DarkGreen;
+        Console.ForegroundColor = ConsoleColor.White;
 
         // objects of instances that have been created //
 
